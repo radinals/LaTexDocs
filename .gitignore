@@ -1,0 +1,10 @@
+*.*
+!.gitignore
+!.tex
+!*.tex
+!.jpeg
+!*.jpeg
+!.jpg
+!*.jpg
+!.png
+!*.png

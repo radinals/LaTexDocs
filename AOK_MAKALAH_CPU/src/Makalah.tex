@@ -1,0 +1,119 @@
+\documentclass[12pt,a4paper]{article}
+
+\input{./src/packages.tex}
+
+\graphicspath { {./img/} }
+% \geometry{lmargin=4.0cm, tmargin=4.0cm, rmargin=3.0cm, bmargin=3.0cm}
+\setstretch{1.5}
+\renewcommand{\baselinestretch}{1.0}
+\renewcommand{\figurename}{Gambar.}
+\date{}
+
+\input{./src/Cover.tex}
+
+\begin{document}
+
+  \pagenumbering{gobble}
+
+  \begin{titlepage}
+    \maketitle
+  \end{titlepage}
+
+  \newpage
+
+  \pagenumbering{roman}
+  \setcounter{page}{1}
+
+  \begin{center}
+    \Large{\textbf{KATA PENGANTAR}}
+  \end{center}
+
+  \vspace{0.5cm}
+
+  \input{./src/Pengantar.tex}
+
+  \addcontentsline{toc}{section}{KATA PENGANTAR}{}
+
+  \newpage
+
+
+  \newpage
+
+  \renewcommand\contentsname {\Large{\textbf{DAFTAR ISI}} }
+
+  \setcounter{page}{2}
+  % \addcontentsline{toc}{section}{DAFTAR ISI}{}
+
+  \begin{center}
+  \tableofcontents
+  \end{center}
+
+  \newpage
+
+  \pagenumbering{arabic}
+  \setcounter{page}{1}
+
+  \begin{center}
+    \Large{\textbf{PENDAHULUAN}}
+  \end{center}
+
+  \vspace{0.5cm}
+
+  \section*{BAB I: PENDAHULUAN}
+  \addcontentsline{toc}{section}{BAB I: PENDAHULUAN}{}
+  \setcounter{section}{1}
+  \setcounter{subsection}{0}
+  \input{./src/Pendahuluan.tex}
+
+  \newpage
+
+  \section*{BAB II: PEMBAHASAN}
+  \addcontentsline{toc}{section}{BAB II: PEMBAHASAN}
+  \setcounter{section}{2}
+  \setcounter{subsection}{0}
+
+    \subsection{Pengertian CPU}
+    \input{./src/BAB_1/Pengertian_CPU.tex}
+
+    \subsection{Peran dan Fungsi CPU}
+    \input{./src/BAB_1/PeranUtama_CPU.tex}
+
+    \subsection{Prinsip Dasar Kerja CPU}
+      \input{./src/BAB_3/PrinsipDasarCPU.tex}
+
+    \subsection{Bagian-Bagian CPU}
+      \input{./src/BAB_3/KomponenDasarCPU.tex}
+
+      \subsubsection{Unit Control}
+        \input{./src/BAB_3/UnitControl.tex}
+
+      \subsubsection{Unit Pemrosesan Aritmatika dan Logika (ALU)}
+        \input{./src/BAB_3/UnitAlu.tex}
+
+      \subsubsection{Unit Memori}
+        \input{./src/BAB_3/UnitMemori.tex}
+
+    \subsection{Pengertian Operasi Mikro}
+        \input{./src/BAB_2/PengertianOperasiMikro.tex}
+
+    \subsection{Jenis-Jenis Operasi Mikro}
+        \input{./src/BAB_2/JenisOperasiMikro.tex}
+
+  \newpage
+
+  \section*{BAB III: PENUTUP}
+  \addcontentsline{toc}{section}{BAB III: PENUTUP}
+  \setcounter{section}{3}
+  \setcounter{subsection}{0}
+  \input{./src/Penutup.tex}
+
+  \newpage
+
+  \begin{center}
+    \section*{\Large{DAFTAR PUSTAKA}}
+  \end{center}
+
+  \addcontentsline{toc}{section}{DAFTAR PUSTAKA}
+  \input{./src/DaftarPustaka.tex}
+
+\end{document}
