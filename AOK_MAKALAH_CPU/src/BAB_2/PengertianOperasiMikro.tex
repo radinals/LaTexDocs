@@ -5,15 +5,8 @@ Operasi ini biasanya melakukan sejumlah operasi-operasi terhadap data di satu
 atau lebih register.
 
 Ketika sebuah program komputer berjalan, akan terdapat sejumlah siklus instruksi yang akan
-disampaikan kepada CPU, instruksi tersebut disebut dengan opcode.
+disampaikan kepada CPU, dan instruksi tersebut direpresentasikan dengan opcode atau Operation-Code.
 
-Opcode sendiri akan diproses dan diartikan oleh CPU, tepatnya di unit control CPU.
-tiap instruksi opcode yang diproses CPU tersebut akan menghasilkan sekelompok
-instruksi-instruksi yang sederhana yang disebut Operasi Mikro.
-
-Meskipun opcode dan operasi-operasi mikro berada di tingkat yang sangat rendah,
-atau sangat rendah dengan CPU, terdapat beberapa perbedaan, pertama opcode ini
-hanya sebuah representasi dari instruksi apa yang diminta suatu program di
-tingkat mesin kepada CPU. Sedangkan operasi mikro, yang di realisasikan
-di serangkaian gerbang-gerbang logika digital yang berada di control unit CPU,
-adalah pemrosesan di tingkat bit dari opcode tadi.
+Opcode akan disampaikan ke Control Unit CPU untuk diproses dan diartikan oleh Unit Decoder, yang
+akan menghasilkan sekelompok instruksi-instruksi yang sederhana yang akan di salurkan ke
+control lines yang sesuai dengan jenis instruksi. Operasi ini disebut dengan Operasi Mikro.

@@ -7,14 +7,12 @@ bagian CPU, agar instruksi yang didapatkan CPU dapat dijalankan secara sistemati
 Unit ini terdiri atas beberapa sub-unit atau elemen yang masing-masing memiliki
 fungsi dan tugas tersendiri.
 
-Menurut Prasetyo B., Puspitasari, A., dan Nasution, R, (2019), Unit Control adalah ``\dots{}
-Elemen Control unit merujuk pada bagian dari sebuah sistem komputer yang bertanggung jawab
-untuk mengarahkan dan mengkoordinasikan aktivitas seluruh unit fungsional dalam pemrosesan data.\dots{}``
+Menurut Prasetyo B., Puspitasari, A., dan Nasution, R, (2019), Unit Control adalah ``Elemen Control unit merujuk pada bagian dari sebuah sistem komputer yang bertanggung jawab
+untuk mengarahkan dan mengkoordinasikan aktivitas seluruh unit fungsional dalam pemrosesan data``.
 
-Berikut adalah bagian-bagian yang umumnya terdapat dalam Unit Control CPU.
+Berikut adalah unit internal yang umumnya terdapat dalam Unit Control CPU.
 
-\begin{itemize}
-
+\begin{enumerate}[label=\alph*.]
 
   \item \textbf{ Control Lines}
 
@@ -42,14 +40,12 @@ Berikut adalah bagian-bagian yang umumnya terdapat dalam Unit Control CPU.
   \item \textbf{ Control Unit Sequencer }
 
     Bagian yang memastikan langkah-langkah instruksi memiliki urutan yang benar
-    agar dapat dieksekusi dengan tepat.
+    agar dapat dieksekusi dengan tepat (Sequencing Logic).
 
-\end{itemize}
+  \item \textbf{ Decoder }
 
-Operasi Control unit melibatkan berbagai proses yang dilakukan oleh Control unit untuk mengatur eksekusi instruksi-instruksi dalam sebuah sistem komputer.
+    Decoder atau Unit Decoder, adalah bagian Control Unit yang berfungsi
+    untuk memproses instuksi tersebut dan menghasilkan sinyal-sinyal kontrol
+    yang sesuai.
 
-Salah satu operasi utama adalah dekode instruksi, di mana Control unit mengurai instruksi-instruksi yang diterima dari memori menjadi sinyal-sinyal kontrol yang dibutuhkan untuk mengarahkan unit-unit fungsional lainnya.
-
-Setelah dekode instruksi dilakukan, Control unit kemudian mengarahkan ALU untuk melakukan operasi yang sesuai sesuai dengan instruksi tersebut. Selain itu, Control unit juga bertanggung jawab untuk mengatur aliran data antara register-register dan unit-unit fungsional lainnya.
-
-Operasi-operasi seperti pengambilan instruksi, pengiriman hasil komputasi, dan pengelolaan aliran kontrol juga merupakan bagian dari tugas-tugas Operasi Control unit. Dengan menjalankan berbagai operasi ini dengan tepat, Control unit memastikan bahwa instruksi-instruksi dieksekusi dengan benar dan sistem komputer beroperasi secara efisien.
+\end{enumerate}
