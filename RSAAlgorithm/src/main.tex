@@ -1,0 +1,171 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{mathptmx}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{ragged2e}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts,amssymb}
+
+\date{}
+
+\begin{document}
+
+\section* {Langkah-Langkah Pembuatan Key}
+
+  \begin{enumerate}
+    \item Menentukan Nilai P dan Q
+
+      Langkah awal untuk membuat key memerlukan
+      dua buah angka prima yang besar yaitu P dan Q, dimana P $\neq$ Q.
+
+    \item Menentukan Nilai N
+
+      Setelah Menentukan nilai P dan Q, dapatkan nilai N dari rumus
+
+      N = P $\cdot$ Q
+
+      Nilai N bisa dipublikasikan, N ini akan menjadi bagian dari private dan public key.
+
+    \item Menentukan Nilai M
+
+      Dan setelah mendapat nilai N, diperlukan juga nilai M. M didapatkan dari rumus
+      berikut.
+
+      M = $\phi$(N), atau M = (P - 1) $\cdot$ (Q - 1)
+
+    \item Menentukan Nilai E
+
+      Lalu Nilai E, nilai ini digunakan dalam operasi enkripsian. Nilai E adalah
+      angka yang dipilih secara acak dan adalah relatif prima dengan nilai M.
+
+      Nilai E ini bersama dengan nilai N membentuk Public Key.
+
+    \item Menentukan Nilai D
+
+      Terakhir Nilai D, nilai ini digunakan dalam operasi dekripsi. Nilai D adalah
+      angka yang memenuhi kongruen berikut.
+
+       E $\cdot$ D $\equiv$ 1 (mod M), atau D = $\frac{1 + (k + M)}{E}$
+
+      Nilai D ini bersama nilai N membentuk Private Key
+
+  \end{enumerate}
+\newpage
+\section*{Contoh Pembuatan Key}
+
+Dengan P = 23 dan Q = 29. Maka didapatkan,
+
+\begin{center}
+N = 23 $\cdot$ 29 = 667
+
+M = (23 - 1) $\cdot$ (29 - 1) = 616
+\end{center}
+
+Nilai E dapat dipilih secara acak selama nilai tersebut merupakan relatif prima
+dari nilai M yaitu 616.
+
+Program memberikan nilai 127. kita bisa memastikan ini relatif prima dengan
+mengecek hasil dari gcd(127,616)
+
+\begin{center}
+616 = 4 $\cdot$ 127 + 8
+
+127 = 15 $\cdot$ 8 + 7
+
+8 = 1 $\cdot$ 7 + 1
+
+7 = 7 $\cdot$ 1 + 0
+\end{center}
+
+Dan karena pembagi terakhir adalah 1, jadi gcd(127,616) adalah 1, artinya
+127 dan 616 adalah relatif prima.
+
+\vspace{0.5cm}
+
+Lalu Nilai D dioutputkan program sebagai 519, untuk membuktikan ini benar
+kita dapat mengecek kekongruenan berikut.
+
+\begin{center}
+127 $\cdot$ 519 $\equiv$ 1 (mod 616)
+\end{center}
+
+
+Hasil dari 127 dikali 519 yaitu 65913 harus bernilai 1 jika dibagi 616, seperti yang
+dapat dilihat sebagai berikut.
+
+\begin{center}
+65913 mod 616 = 107, sisa 1
+\end{center}
+
+Dari hasil diatas, dapat disimpulkan bahwa nilai yang dihasilkan program, 519
+adalah benar karena memenuhi kekongruenan.
+
+\newpage
+
+\section*{Proses Dekripsi/Enkripsi}
+
+\begin{center}
+
+Enkripsi: C(P) = $P^{E}$ mod N
+
+Dekripsi: P(C) = $C^{D}$ mod N
+
+\end{center}
+
+\begin{itemize}
+  \item C = cyphertext.
+  \item P = plaintext.
+\end{itemize}
+
+\section*{Contoh Proses Dekripsi/Enkripsi}
+
+Dengan menggunakan nilai yang telah dihasilkan sebelumnya, terdapat nilai berikut.
+
+\begin{center}
+N = 667
+
+E = 127
+
+D = 519
+\end{center}
+
+Misalkan terdapat Plaintext yaitu "Budi".
+
+Plaintext ini jika diubah menjadi nilai ASCII akan menjadi, (66,117,100,105).
+
+Program akan melakukan enkripsi/dekripsi pada tiap huruf, hingga proses enkripsi
+akan berjalan sebagai berikut.
+
+\begin{center}
+B = $(66)^{127}$ mod 667 = 398
+
+u = $(117)^{127}$ mod 667 = 639
+
+d = $(100)^{127}$ mod 667 = 13
+
+i = $(105)^{127}$ mod 667 = 98
+\end{center}
+
+Nilai yang dihasilkan proses enkripsi biasanya adalah angka yang sangat besar,
+hingga diluar jangkauan nilai ASCII, untuk kasus ini hasi enkripsi menghasilkan nilai
+(398, 639, 13, 98).
+
+Lalu dalam proses dekripsi, dilakukan juga secara per huruf.
+
+\begin{center}
+398 = $(398)^{519}$ mod 667 = 66 (B)
+
+639 = $(639)^{519}$ mod 667 = 117 (u)
+
+13 = $(13)^{519}$ mod 667 = 13 (d)
+
+98 = $(98)^{519}$ mod 667 = 105 (i)
+\end{center}
+
+Setelah proses dekripsi, bisa dilihat akan didapatkan kembali nilai awal,
+ini menandakan kedua proses berhasil.
+
+\end{document}

@@ -1,0 +1,86 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{mathptmx}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{ragged2e}
+\date{}
+% \pagenumbering{gobble}
+
+\graphicspath{{./img}}
+
+\definecolor{mGreen}{rgb}{0,0.6,0}
+\definecolor{mGray}{rgb}{0.5,0.5,0.5}
+\definecolor{mPurple}{rgb}{0.58,0,0.82}
+\definecolor{backgroundColour}{rgb}{0.95,0.95,0.92}
+\vbadness=1000
+\overfullrule=1000mm
+\hfuzz=1000pt
+\vfuzz=20pt
+
+\lstset{
+  language=C,                     % choose the language of the code
+  numbers=left,                   % where to put the line-numbers
+  stepnumber=1,                   % the step between two line-numbers.
+  numbersep=10pt,                 % how far the line-numbers are from the code
+  backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
+  showspaces=false,               % show spaces adding particular underscores
+  showstringspaces=false,         % underline spaces within strings
+  showtabs=false,                 % show tabs within strings adding particular underscores
+  tabsize=2,                      % sets default tabsize to 2 spaces
+  captionpos=b,                   % sets the caption-position to bottom
+  breaklines=true,                % sets automatic line breaking
+  breakatwhitespace=true,         % sets if automatic breaks should only happen at whitespace
+  % title=\lstname,               % show the filename of files included with \lstinputlisting;
+}
+
+\begin{document}
+
+     \begin{center}
+         \vspace*{1cm}
+
+         \textbf{\Huge{SimpleRSA}}
+
+         \vspace{0.2cm}
+
+         Implementasi Sederhana Algoritma RSA menggunkanan C++
+
+         \vspace{0.2cm}
+
+     \end{center}
+
+  \pagenumbering{arabic}
+
+  Program SimpleRSA di backend menyimpan cyphertext/plaintext di dalam objek khusus,
+  yaitu RSAText seperti sebagai berikut.
+
+    \subsubsection*{Header (rsatext.h)}
+      \lstinputlisting{source_file/rsatext.h}
+
+    \newpage
+
+    \subsubsection*{Source (rsatext.cpp)}
+      \lstinputlisting{source_file/rsatext.cpp}
+
+  nilai string, maupun itu plaintext atau cyphertext akan dimanipulasi oleh objek SimpleRSA,
+  string tersebut akan di pisahkan (split) per karakter dan kemudian akan di proses oleh
+  SimpleRSA untuk di dekripsi atau di enkripsi.
+
+  Perlu dicatat tidak ada pengecekan internal dari kedua objek ini yang akan
+  memastikan suatu plaintext atau cyphertext akan diproses lebih dari seharusnya.
+
+  Jadi pemakai objek ini harus mengingat apakah string yang tersimpan
+  itu telah di dekripsi atau telah terenkripsi.
+
+   \vspace{0.2cm}
+
+    \subsubsection*{Header (simplersa.h)}
+      \lstinputlisting{source_file/simplersa.cpp}
+
+    \newpage
+
+    \subsubsection*{Source (simplersa.cpp)}
+      \lstinputlisting{source_file/simplersa.cpp}
+
+\end{document}
