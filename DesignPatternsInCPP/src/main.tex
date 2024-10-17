@@ -1,0 +1,149 @@
+\documentclass[12pt, a4paper]{book}
+
+\usepackage[T1]{fontenc}
+\usepackage{courier}
+\usepackage{graphicx}
+\usepackage{mathptmx}
+\usepackage{ragged2e}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{enumitem}
+
+\graphicspath{{../img}}
+\pagenumbering{gobble}
+
+\definecolor{mGreen}{rgb}{0,0.6,0}
+\definecolor{mGray}{rgb}{0.5,0.5,0.5}
+\definecolor{mPurple}{rgb}{0.58,0,0.82}
+\definecolor{backgroundColour}{rgb}{0.95,0.95,0.92}
+
+\lstset{
+  language=C,                % choose the language of the code
+  % numbers=left,                   % where to put the line-numbers
+  stepnumber=1,                   % the step between two line-numbers.
+  numbersep=1pt,                  % how far the line-numbers are from the code
+  backgroundcolor=\color{backgroundColour},  % choose the background color. You must add \usepackage{color}
+  showspaces=false,               % show spaces adding particular underscores
+  showstringspaces=false,         % underline spaces within strings
+  showtabs=false,                 % show tabs within strings adding particular underscores
+  tabsize=2,                      % sets default tabsize to 2 spaces
+  captionpos=b,                   % sets the caption-position to bottom
+  breaklines=true,                % sets automatic line breaking
+  breakatwhitespace=true,         % sets if automatic breaks should only happen at whitespace
+  basicstyle=\footnotesize\ttfamily
+  % title=\lstname,                 % show the filename of files included with \lstinputlisting;
+}
+
+\begin{document}
+     \begin{center}
+         \vspace*{1cm}
+
+         \textbf{\Huge{Design Patterns}}
+
+         \vspace{0.2cm}
+
+          C++ Design Patterns Study Notes
+
+          By: RSS
+
+         \vspace{0.2cm}
+
+     \end{center}
+
+     \newpage{}
+  \pagenumbering{arabic}
+
+  \chapter {OOP Concepts}
+
+   \begin{flushright}
+   ``Object-oriented design is the roman numerals of computing.``
+
+   Rob Pike
+   \end{flushright}
+
+  \section{Polymorphism}
+
+    Single symbol to represent multiple types. A Symbol can behave in several
+    different forms.
+
+    Polymorphism enables many objects to behave the same way, a common interface.
+
+    Polymorphism can be devided to two types, Run-Time Polymorphism,
+    and Compile-Time Polymorphism. Run-Time Polymorphism, or dynamic or late
+    binding, is polymorphism that is resolved in the processes lifetime. Compile-Time
+    Polymorphism, or static or early binding, is polymorphism that
+    is resolved in the compilation process.
+
+    There are also a few common forms of polymorphism, as stated below.
+
+    \begin{enumerate}[label=\arabic*.]
+
+      \item \textbf{Ad Hoc}
+
+        Common Interface for a arbitrary set of individually specified types.
+
+        \lstinputlisting{cpp_source/PolymorphismFormsExample/adHocObj.cpp}
+
+      \item \textbf{Parametric}
+
+        Using Abstract types instead of using concrete types that can be
+        subtitute for any type.
+
+        \lstinputlisting{cpp_source/PolymorphismFormsExample/parametricPoly.cpp}
+
+      \item \textbf{Subtyping/Inclusion}
+
+        A name that denotes instances of multiple different classes related
+        by some common superclass.
+
+        \lstinputlisting{cpp_source/PolymorphismFormsExample/subtyping.cpp}
+
+    \end{enumerate}
+
+  \section{Inheritance}
+
+    A way of deriving a new class and also inherits traits from the earlier
+    existing class this is the fundemental idea behind reusable code in OOP.
+
+    There is several types of Inheritance, as given below.
+
+    \begin{enumerate}[label=\arabic*.]
+      \item Single Inheritance
+
+        One Sub class inherits from one Super class.
+
+        \lstinputlisting{cpp_source/InheritanceExample/SingleInheritance.cpp}
+
+      \item Multiple Inheritance
+
+        One Sub class inherits from two or more Super class.
+
+        \lstinputlisting{cpp_source/InheritanceExample/MultipleInheritance.cpp}
+
+      \item Multilevel Inheritance
+
+        One Sub class inherits from another Sub class of a Super class
+
+        \lstinputlisting{cpp_source/InheritanceExample/MultilevelInheritance.cpp}
+
+      \item Hierarchical inheritance
+      \item Hybrid inheritance
+    \end{enumerate}
+
+  \section{Encapsulation}
+
+  Hiding complexity from the implementation inside a class.
+
+  \section{Abstraction}
+
+  Simplifying features by hiding the complicated/unimportant details.
+
+  \section{Data Hiding}
+
+  Hiding data inside a class from the user (programmer).
+
+  \section{Message Passing}
+
+  Communication between objects.
+
+\end{document}
