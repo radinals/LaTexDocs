@@ -1,0 +1,213 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{courier}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{mathptmx}
+\usepackage{ragged2e}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{enumitem}
+
+\graphicspath{{img}}
+\pagenumbering{gobble}
+\date{}
+
+\captionsetup[figure]{labelformat=empty}
+
+\newcommand{\addSection}[2] {
+  \begin{center}
+    \large{\textbf{#1}}
+    \section*{#2}
+  \end{center}
+  \addcontentsline{toc}{section}{#1 #2}{}
+  \setcounter{section}{2}
+  \setcounter{subsection}{0}
+  \vspace{1cm}
+}
+
+\title{
+
+  \LARGE{\textbf{LAPORAN}}
+
+  {\vspace{1cm}}
+
+  \large{\textbf{Eksplorasi Pembuatan FOOBAR}}
+
+  {\large{Diajukan untuk Memenuhi Tugas Mata Kuliah Jaringan Komputer}}
+
+  {\vspace{1cm}}
+
+  \normalsize{Radinal Shidiq Saragih}
+
+  \normalsize{Mohammad Hiqmal Ariffansyah}
+
+  \normalsize{Ridho Faatihul Ihsan}
+
+  {\vspace{1cm}}
+
+  {\includegraphics[scale=1.8]{LogoFakultas.jpeg}}
+
+  {\vspace{2cm}}
+
+  {\large{PROGRAM STUDI TEKNIK INFORMATIKA}}
+
+  {\large{FAKULTAS TEKNIK}}
+
+  {\large{UNIVERSITAS SURYAKANCANA}}
+
+  {\large{CIANJUR}}
+
+  {\small{2024}}
+}
+
+\begin{document}
+  \begin{titlepage}
+    \maketitle
+  \end{titlepage}
+
+  \pagenumbering{roman}
+
+  %-KATA PENGANTAR-----------------------------------------------------------------
+  \begin{center}
+    \section*{KATA PENGANTAR}
+  \end{center}
+  \setcounter{section}{1}
+  \setcounter{subsection}{0}
+  \addcontentsline{toc}{section}{KATA PENGANTAR}{}
+  \vspace{1cm}
+  \begin{flushright}
+    Cianjur, September 2024
+
+    \vspace{0.5cm}
+
+    Penulis
+  \end{flushright}
+  %---------------------------------------------------------------------------
+
+  \newpage
+
+  %-TOC-----------------------------------------------------------------------
+  \renewcommand\contentsname {\Large{\textbf{DAFTAR ISI}} }
+  \begin{center}
+    \tableofcontents
+  \end{center}
+  \addcontentsline{toc}{section}{DAFTAR ISI}{}
+  \vspace{1cm}
+  %---------------------------------------------------------------------------
+
+  \newpage
+
+  %---------------------------------------------------------------------------
+
+  \pagenumbering{arabic}
+
+  %---------------------------------------------------------------------------
+  \addSection{BAB I}{PENDAHULUAN}
+
+  \subsection{Latar Belakang}
+
+  \subsection{Rumusan Masalah}
+
+  \subsection{Tujuan}
+
+  %---------------------------------------------------------------------------
+  \newpage
+  %---------------------------------------------------------------------------
+
+  \addSection{BAB II}{ANALISIS DAN DESIGN}
+
+  \subsection{Design Topologi}
+
+  Topologi yang dibangun di simulasi terdiri dari empat buah jaringan yang
+  terhubung pada satu router, dengan router tersebut nantinya akan
+  terhubung dengan router lainnya dalam sebuah rangkaian ring.
+
+  Alasan utama dari penggunaan lebih dari satu router di sini adalah
+  untuk meningkatkan toleransi jaringan terhadap kemungkinan terjadinya
+  kegagalan mesin, dan juga meningkatkan fleksibelitas jaringan untuk
+  berkembang untuk memenuhi kebutuhan.
+
+  Router dalam topologi ini dihubungkan dengan memanfaatkan static routing,
+  dengan tujuan agar menambah jalur alternatif bagi data yang ditransmisikan 
+  jika terjadi kegagalan pada salah satu kabel yang menghubungkan router-router
+  tersebut.
+
+  Konfigurasi IP yang digunakan dalam menghubungkan router-router akan
+  menggunakan traffic 30, karena dalam topologi ini, kabel yang menghubungkan
+  dua buah router hanya akan membutuhkan dua buah host id yang berada di
+  network yang sama.
+
+  \subsection{Analisis Kebutuhan}
+
+  Perangkat-perangkat yang digunakan dalam simulasi ini terdapat sebagai
+  berikut.
+
+  \begin{enumerate}
+
+    \item Router Cisco (Seri 3700-an)
+
+      Karena simulasi ini tidak akan menggunakan fitur ataupun protocol khusus,
+      maka router Cisco seri 3700-an akan digunakan.
+
+    \item Unmanaged Switch GNS3
+
+      Switch yang digunakan adalah switch default GNS3, karena di simulasi
+      ini switch hanya bertindak sebagai konsentrator.
+
+    \item VPCS (Virtual PC)
+
+      VPCS digunakan sebagai representasi perangkat user yang terhubung pada
+      jaringan, tugas nya hanya satu yaitu untuk mesimulasikan aktifitas user.
+
+  \end{enumerate}
+
+  \subsection{Konfigurasi Jaringan}
+
+  Konfigurasi topologi ini akan melewati beberapa tahapan, yaitu pertama
+  me-konfigurasi IP dan kemudian mengkonfigurasi routing static.
+
+  \subsubsection{Konfigurasi IP Router}
+
+  \subsubsection{Konfigurasi IP VPCS}
+
+  %---------------------------------------------------------------------------
+  \newpage
+  %---------------------------------------------------------------------------
+
+  \addSection{BAB III}{PENGUJIAN}
+
+  \subsection{Metode Pengujian}
+
+  Metode pengujian dalam topologi ini akan menggunakan pengujian \emph{Ping}
+  yang terbagi kedalam dua kondisi, yaitu kondisi normal dan juga akan diuji
+  di kondisi dimana terdapat satu kabel diantara dua router yang akan diputus,
+  untuk mesimulasikan sebuah gangguan fisik.
+
+  \subsection{Pengujian Ping}
+
+  %---------------------------------------------------------------------------
+  \newpage
+  %---------------------------------------------------------------------------
+
+  \addSection{BAB IV}{KESIMPULAN}
+
+  %---------------------------------------------------------------------------
+  \newpage
+  %---------------------------------------------------------------------------
+
+  \pagenumbering{gobble}
+
+  \begin{center}
+    \section*{DAFTAR PUSTAKA}
+  \end{center}
+  \addcontentsline{toc}{section}{DAFTAR PUSTAKA}{}
+
+  \vspace{1cm}
+
+  \begin{enumerate}
+    \item foo
+  \end{enumerate}
+
+\end{document}

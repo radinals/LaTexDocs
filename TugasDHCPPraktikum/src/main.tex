@@ -1,0 +1,134 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage{geometry}
+\usepackage{array}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{caption}
+
+\geometry{a4paper, margin=1cm}
+\graphicspath{{img}}
+\pagenumbering{gobble}
+\date{}
+\captionsetup[figure]{labelformat=empty}
+
+\begin{document}
+
+Nama: Radinal Shidiq Saragih
+
+Kelas: IF C 2023
+
+NPM: 5520123104
+
+\begin{center}
+  \section*{Tugas Setup DHCP di GNS-3}
+  \vspace{0.5cm}
+\end{center}
+
+\subsection*{Konfigurasi DHCP Server Zentyal}
+
+\begin{enumerate}
+  \item Konfigurasi Interface
+
+      \includegraphics[scale=0.4]{CONF\_ZENTYAL\_IP.png}
+
+  \item Konfigurasi DHCP
+
+      \includegraphics[scale=0.4]{CONF\_ZENTYAL\_DHCP.png}
+
+\end{enumerate}
+
+\newpage
+
+\subsubsection*{Konfigurasi VPCS (192.168.20.0/24)}
+\begin{enumerate}
+  \item PC1
+
+      \includegraphics[scale=0.4]{PC1\_DHCP.png}
+
+  \item PC2
+
+      \includegraphics[scale=0.4]{PC2\_DHCP.png}
+
+\end{enumerate}
+
+\subsubsection*{Uji Ping VPCS}
+\begin{enumerate}
+  \item PC1 Ke PC2
+
+    \includegraphics[scale=0.5]{PC1\_PING\_PC2.png}
+
+\end{enumerate}
+
+
+\subsection*{Konfigurasi DHCP Server Router}
+\begin{enumerate}
+  \item Konfigurasi IP
+
+    \begin{enumerate}
+
+      \item FastEthernet0/0
+
+        \includegraphics[scale=0.8]{CONF\_R1\_INT00.png}
+
+      \item FastEthernet1/0
+
+        \includegraphics[scale=0.8]{CONF\_R1\_INT10.png}
+
+    \end{enumerate}
+
+
+  \item Konfigurasi DHCP
+    \begin{enumerate}
+      \item Konfigurasi 192.168.31.0/24
+
+        \includegraphics[scale=0.8]{CONF\_R1\_INT00\_DHCP.png}
+
+      \item Konfigurasi 192.168.32.0/24
+
+        \includegraphics[scale=0.8]{CONF\_R1\_INT10\_DHCP.png}
+
+    \end{enumerate}
+\end{enumerate}
+%-----------------------------------------------------------------------------
+\subsubsection*{Konfigurasi VPCS}
+\begin{enumerate}
+  \item 192.168.31.0/24
+    \begin{enumerate}
+      \item PC3
+
+        \includegraphics[scale=0.5]{PC3\_DHCP.png}
+
+      \item PC4
+        
+        \includegraphics[scale=0.5]{PC4\_DHCP.png}
+
+    \end{enumerate}
+  \item 192.168.32.0/24
+    \begin{enumerate}
+      \item PC5
+
+        \includegraphics[scale=0.5]{PC5\_DHCP.png}
+
+      \item PC6
+
+        \includegraphics[scale=0.5]{PC6\_DHCP.png}
+
+    \end{enumerate}
+\end{enumerate}
+
+\subsubsection*{Uji Ping VPCS}
+\begin{enumerate}
+  \item PC3 Ke PC4
+
+      \includegraphics[scale=0.4]{PC3\_PING\_PC4.png}
+
+  \item PC3 Ke PC6
+
+      \includegraphics[scale=0.4]{PC3\_PING\_PC6.png}
+
+\end{enumerate}
+
+
+\end{document}

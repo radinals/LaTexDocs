@@ -1,0 +1,120 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{xcolor}
+
+\geometry{a4paper, margin=0.3cm}
+
+\lstdefinelanguage{SQL}{
+  keywords={
+    select, from, where, group, by, order, asc, desc, and, or, sum, count,
+    as, is, null, not, like, join, on, inner, left, right, outer, distinct
+  },
+  keywordstyle=\bfseries\color{blue}, % Keywords in bold blue
+  identifierstyle=\color{black},     % Identifiers in black
+  stringstyle=\color{teal},          % Strings in teal
+  commentstyle=\itshape\color{gray}, % Comments in italic gray
+  morecomment=[l][\itshape\color{gray}]{--}, % SQL-style comments with --
+  morestring=[b]"                   % Double-quoted strings
+  }
+
+  % Define the lstlisting style to use for SQL
+  \lstset{
+    language=SQL,
+    basicstyle=\ttfamily\footnotesize, % Basic font style for all text
+    numbers=none,                      % Line numbers on the left
+    stepnumber=0,                      % Numbering each line
+    numbersep=4pt,                     % Space between number and text
+    backgroundcolor=\color{white},     % Background color
+    frame=single,                      % Box around the code
+    captionpos=b,                      % Caption at the bottom
+    breaklines=true,                   % Automatic line breaking
+    breakatwhitespace=true,            % Break lines only at whitespace
+    showspaces=false,                  % Don't show spaces
+    showstringspaces=false,            % Don't show spaces in strings
+    }
+
+    \newcommand{\codeListing}[3] {
+
+      \lstinputlisting{./code/Kasus#1/soal#2.sql}
+
+      %\begin{center}
+      %\includegraphics[scale=#3]{K#1S#2.png}
+      %\end{center}
+
+      }
+
+      \begin{document}
+
+      \begin{multicols}{2}
+
+        \section*{Kasus 1}
+        \begin{enumerate}
+
+          \item \codeListing{1}{1}{0.5}
+
+          \item \codeListing{1}{2}{0.5}
+
+          \item \codeListing{1}{3}{0.5}
+
+          \item \codeListing{1}{4}{0.5}
+
+        \end{enumerate}
+
+        \columnbreak
+
+        \section*{Kasus 2}
+        \begin{enumerate}
+
+          \item \codeListing{2}{1}{0.5}
+
+          \item \codeListing{2}{2}{0.5}
+
+          \item \codeListing{2}{3}{0.5}
+
+          \item \codeListing{2}{4}{0.5}
+
+        \end{enumerate}
+
+        \newpage
+
+        \section*{Kasus 3}
+        \begin{enumerate}
+
+          \item \codeListing{3}{1}{0.5}
+
+          \item \codeListing{3}{2}{0.5}
+
+          \item \codeListing{3}{3}{0.5}
+
+          \item \codeListing{3}{4}{0.5}
+
+        \end{enumerate}
+
+        \columnbreak
+
+        \section*{Kasus 4}
+        \begin{enumerate}
+
+          \item \codeListing{4}{1}{0.5}
+
+          \item \codeListing{4}{2}{0.5}
+
+          \item \codeListing{4}{3}{0.5}
+
+          \item \codeListing{4}{4}{0.5}
+
+          \item \codeListing{4}{5}{0.5}
+
+          \item \codeListing{4}{6}{0.5}
+
+          \item \codeListing{4}{7}{0.5}
+
+        \end{enumerate}
+
+      \end{multicols}
+
+    \end{document}

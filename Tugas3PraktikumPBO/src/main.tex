@@ -1,0 +1,97 @@
+\documentclass[8pt, a4paper]{article}
+\usepackage{multicol}
+\usepackage{listings}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{xstring}
+
+\geometry{margin=0.3cm}
+\graphicspath{{img}}
+
+\pagenumbering{gobble}
+\date{}
+
+\lstdefinestyle{customstyle}{
+    basicstyle=\ttfamily\scriptsize,
+    breakatwhitespace=true,         
+    breaklines=true,                 
+    captionpos=t,                    
+    keepspaces=false,                 
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    frame=single,
+    tabsize=1
+}
+
+\renewcommand\lstlistingname{}
+\DeclareCaptionFormat{listing}{}
+\captionsetup[lstlisting]{labelformat=empty}
+
+\newcommand{\lstinputwithcaption}[2]{%
+  \lstinputlisting[caption={\texttt{#2}}]{#1}%
+}
+\newcommand{\codeListing}[6] {
+
+  \begin{multicols}{2}
+    \lstinputwithcaption{#1}{#2}
+
+    \columnbreak
+
+    \lstinputwithcaption{#3}{#4}
+
+    \begin{center}
+      \includegraphics[scale=#5]{#6}
+    \end{center}
+
+  \end{multicols}
+
+
+}
+
+\lstset{style=customstyle}
+
+\begin{document}
+
+NAMA: Radinal Shidiq Saragih
+
+KELAS: IF C 2023
+
+NPM: 5520123104
+
+\begin{enumerate}
+  \item Gaji Karyawan
+
+      \codeListing
+        {./code/src/No3/Karyawan.java}{Karyawan.java}
+        {./code/src/No3/Main.java}{Main.java}
+        {0.5}{S1.png}
+
+  \item Pendapatan Salesman
+
+    \begin{multicols}{2}
+      \lstinputwithcaption{./code/src/No5/Main.java}{Main.java}
+      \includegraphics[scale=0.4]{S2.png}
+      \end{multicols}
+
+
+  \item Mesin Kasir Sederhana
+
+    \begin{multicols}{2}
+    \lstinputwithcaption{./code/src/No6/Main.java}{Main.java}
+    \includegraphics[scale=0.5]{S3.png}
+    \end{multicols}
+
+
+  \item Menu Luas Bangun Datar
+
+    \begin{multicols}{2}
+    \lstinputwithcaption{./code/src/No7/Main.java}{Main.java}
+    \includegraphics[scale=0.5]{S4.png}
+    \end{multicols}
+
+
+\end{enumerate}
+
+\end{document}

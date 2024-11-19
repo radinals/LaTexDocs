@@ -1,0 +1,205 @@
+\documentclass[8pt, a4paper]{article}
+\usepackage{multicol}
+\usepackage{listings}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{xstring}
+\usepackage{verbatim}
+
+
+\geometry{margin=0.5cm}
+\graphicspath{{img}}
+
+\pagenumbering{gobble}
+\date{}
+
+\lstdefinestyle{customstyle}{
+    basicstyle=\ttfamily\scriptsize,
+    breakatwhitespace=true,         
+    breakautoindent=true,
+    breaklines=true,                 
+    captionpos=t,                    
+    keepspaces=false,                 
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    frame=none,
+    stepnumber=1,                                           
+    tabsize=2
+}
+
+\lstset{style=customstyle}
+
+\begin{document}
+
+\section{Konfigurasi}
+
+\subsection{Tema GTK}
+
+GTK, adalah library GUI yang umum digunakan di linux. Umumnya konfigurasi untuk
+merubah warna atau tema yang digunakan oleh aplikasi yang menggunakan toolkit GTK
+dilakukan pada sebuah file yang biasanya dituliskan dalam syntax css. File stylesheet
+atau GTK dapat berjumlah lebih dari satu, karena untuk tiap versi GTK akan dibedakan
+dari stylesheet mana tema akan dibaca.
+
+Karena stylesheet gtk dapat berjumlah banyak umumnya stylesheet-stylesheet
+tersebut akan dikumpulkan kedalam satu folder seperti sebagai berikut.
+
+\begin{itemize}
+  \item theme/
+  \begin{itemize}
+    \item gtk-3.0/
+    \begin{itemize}
+      \item gtk.css
+      \item gtk-dark.css 
+    \end{itemize}
+    \item gtk-4.0/
+    \begin{itemize}
+      \item gtk.css
+      \item gtk-dark.css 
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+disini ada dua versi gtk yang dapat dikonfigurasi, yaitu 3.0 dan 4.0, dari
+kedua versi ini yang paling banyak sudah diadopsi adalah versi 3.0, karena
+versi 4.0 tergolong baru dikenalkan, jadi lebih banyak aplikasi yang menggunakan
+versi 3.0.
+
+Dalam guna remastering, konfigurasi dilakukan pada css gtk versi 3.0, dengan
+merubah beberapa class dan menyesuaikannya kedalam tema yang telah dirancang.
+
+Berikut adalah contoh konfigurasi GTK untuk merubah tampilan panel dan tema XFCE.
+
+\begin{multicols}{2}
+\begin{lstlisting}
+
+@define-color BlueDarker_Custom #102444;
+@define-color BlueDark_Custom #1a3059;
+@define-color Blue_Custom #203e70;
+@define-color BlueLightLighter_Custom #2e64bd;
+@define-color BlueLight_Custom #92a8c0;
+@define-color White_Custom #eef3ed;
+
+/* XFCE4 PANEL */
+.xfce4-panel.background {
+  background: @Blue_Custom;
+}
+
+.xfce4-panel button {
+  border: 0;
+  border-radius: 0;
+  min-width: 30px;
+  box-shadow: none;
+  text-shadow: none;
+  background: inherit;
+  color: #eef3ed; }
+
+  .xfce4-panel button:hover {
+    background: @Blue_Custom;
+  }
+
+  .xfce4-panel button:not(#whiskermenu-button):checked,
+  .xfce4-panel button:not(#whiskermenu-button):active
+  {
+    border-radius: 4px;
+    border: 1px solid @BlueDarker_Custom;
+    color: #000000;
+    background: rgba(238.0, 243.0, 237.0, 0.8);
+  }
+
+  .xfce4-panel.vertical button:not(#whiskermenu-button):checked,
+  .xfce4-panel.vertical button:not(#whiskermenu-button):active 
+  {
+    box-shadow: inset 2px 0 0 @BlueDarker_Custom; 
+  }
+
+/* XFCE4 NOTIFICATIONS & LOGOUT DIALOG */
+#XfceNotifyWindow, .xfsm-logout-dialog, .xfsm-logout-dialog button {
+  border: 1px solid #d9d9d9;
+  border-bottom-width: 2px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  -gtk-icon-style: symbolic; }
+
+.xfsm-logout-dialog > .vertical > .horizontal button {
+  margin: 8px; }
+\end{lstlisting}
+\end{multicols}
+
+\subsection{Konfigurasi LightDM/Lock Screen}
+
+Konfigurasi pada lockscreen di Xubuntu dapat dilakukan dengan merubahnya di konfigurasi
+css gtk selayaknya tema yang sebelumnya dijelaskan, potongan konfigurasi dapat
+dilihat sebagai berikut.
+
+\begin{multicols}{2}
+\begin{lstlisting}
+.lightdm-gtk-greeter #panel_window {
+  background: rgba(32.0, 62.0, 112.0, 1);
+  color: @White_Custom;
+  text-shadow: none;
+  -gtk-icon-shadow: none; }
+
+.lightdm-gtk-greeter #login_window {
+  border: 0;
+  background-color: rgba(32.0, 62.0, 112.0, 0.8);
+  color: @White_Custom;
+  border-radius: 4px;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.15); }
+  .lightdm-gtk-greeter #login_window entry {
+    background: @White_Custom;
+    border-color: rgba(255, 255, 255, 0.3);
+    min-height: 32px;
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2); }
+    .lightdm-gtk-greeter #login_window entry image {
+      margin: 0;
+   }
+  .lightdm-gtk-greeter #login_window #buttonbox_frame {
+    padding-top: 20px;
+    background: rgba(32.0, 62.0, 112.0, 1);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    /*border-radius: 0 0 4px 4px; */
+    box-shadow: inset 0 -4px rgba(0, 0, 0, 0.2), inset 0 1px 2px rgba(0, 0, 0, 0.07); }
+    .lightdm-gtk-greeter #login_window #buttonbox_frame button {
+      border: 0;
+      color: #000000;
+      text-shadow: none; }
+    .lightdm-gtk-greeter #login_window #buttonbox_frame #cancel_button {
+      background: @White_Custom;
+      box-shadow: none;
+      color: #000000; }
+    .lightdm-gtk-greeter #login_window #buttonbox_frame #login_button {
+      background: @White_Custom;
+      box-shadow: inset 0 -2px rgba(0, 0, 0, 0.2); }
+\end{lstlisting}
+\end{multicols}
+
+\newpage
+
+\subsection{Konfigurasi Splash Screen/Loading Screen}
+
+Konfigurasi pada splash screen dapat dilakukan dengan membuat sebuah tema
+plymouth, plymouth adalah software yang nantinya di saat boot dan shutdown
+akan dijalankan untuk menampilkan layar-layar loading.
+
+Bentuk dari sebuah tema plymouth sederhana terdiri atas,
+
+\begin{enumerate}
+  \item file .plymouth
+    Berisikan informasi tentang module-module dan tema yang ingin dibuat
+
+  \item file .script
+    Berisikan logika dari tema, kapan, bagaimana atau dimana gambar ditampilkan.
+
+  \item asset atau grafik
+    asset adalah file-file yang akan digunakan dalam script agar dapat menampilan
+    gambar.
+
+\end{enumerate}
+
+Konfigurasi dilakukan dengan membuat script yang akan menampilkan asset-asset yang
+ingin ditampilkan. Dan untuk menerapkan nya pada system dapat dilakukan melalui
+terminal untuk mengatur tema mana yang akan digunakan.
+
+\end{document}
