@@ -1,0 +1,154 @@
+\documentclass[10pt,a4paper]{article}
+
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{ragged2e}
+\usepackage{multicol}
+
+\input{./base/base.tex}
+
+\geometry{margin=1cm}
+\graphicspath { {./img/} }
+
+\pagenumbering{gobble}
+\date{}
+
+\newcommand{\codeListing}[3] {
+  \lstinputlisting{./code/soal#1.sql}
+}
+
+\lstdefinelanguage{SQL}{
+  keywords={
+    select, from, where, group, by, order, asc, desc, and, or, sum, count,
+    as, is, null, not, like, join, on, inner, left, right, outer, distinct
+  },
+  keywordstyle=\bfseries\color{blue}, % Keywords in bold blue
+  identifierstyle=\color{black},     % Identifiers in black
+  stringstyle=\color{teal},          % Strings in teal
+  commentstyle=\itshape\color{gray}, % Comments in italic gray
+  morecomment=[l][\itshape\color{gray}]{--}, % SQL-style comments with --
+  morestring=[b]"                   % Double-quoted strings
+}
+
+\lstset{
+  language=SQL,
+  basicstyle=\ttfamily\footnotesize, % Basic font style for all text
+  numbers=none,                      % Line numbers on the left
+  stepnumber=0,                      % Numbering each line
+  numbersep=4pt,                     % Space between number and text
+  backgroundcolor=\color{white},     % Background color
+  frame=single,                      % Box around the code
+  captionpos=b,                      % Caption at the bottom
+  breaklines=true,                   % Automatic line breaking
+  breakatwhitespace=true,            % Break lines only at whitespace
+  showspaces=false,                  % Don't show spaces
+  showstringspaces=false,            % Don't show spaces in strings
+}
+
+
+\begin{document}
+
+  NAMA: Radinal Shidiq Saragih
+
+  KELAS: IF C 2023
+
+  NPM: 5520123104
+
+  \begin{enumerate}
+    \item Perusahan yang bergerak di bidang pariwisata akan membuat system
+          informasi pengelolaan VILA yang tersebar di wilayah cianjur dan puncak
+          bogor. Dengan permintaan pelanggan harus melakukan login terhadap aplikasi
+          dan memilih berbagai type Vila dan fasilitas vila yang ada. Kemudian
+          pelanggan akan melakukan booking atas vila tersebut dengan menyertakan
+          berapa jumlah penghuni villa dewasa dan anak anak. Perusahaan tersebut
+          juga mempunyai karyawan yang harus login pada aplikasi/system tersebut
+          sesuai dengan rolenya masing-masing. Selain itu juga dalam vila tersebut
+          mempunyai restoran dengan berbagai macam menu makanan yang bisa di pesan
+          baik di anter ke villa maupun pesan langsung ke restoran, dan pelanggan
+          memalkukan pemayaran atas pesanan makanan dengan pesanan vila, dari kasus
+          ini buatlah
+
+      \begin{itemize}
+
+        \item ERD
+
+          \includegraphics[scale=0.5]{"erd.png"}
+
+        \item Physical Data Model
+
+          \includegraphics[scale=0.4]{"physicalmodel.png"}
+
+      \end{itemize}
+
+    \newpage
+
+    \item Tampilkan data NPM,NAMAMHS,ANGKATAN,PRODI,ProgramStudi,
+          Sts\_Pendidikan,Deskripsi yang berelasi pada table tmhs,tprodi dan
+          tstauskelas denga out put sebagai berikut gunakan fungsi Right
+
+
+          \codeListing{1}
+
+
+    \item Tampilkan jumlah masiswa per program study table join relasi Tmhs
+          dan tprodi
+
+
+          \codeListing{2}
+
+
+    \item Tampikan data dari beban SKS join relasi ke tprodi dan tstauskelas
+          dengan output seperti di bawah ini
+
+
+          \codeListing{3}
+
+
+    \item Tampilan jumlah pendapatan per prodi di ambil dari
+          table tunsur\_payment join table dengan tprodi dengan output
+          sebegai berikut
+
+
+          \codeListing{4}
+
+
+    \item Tampilkan nilai dengan output sebagai berikut join relasi tnilai,
+          tmhs dan tprodi
+
+
+          \codeListing{5}
+
+
+    \item Tampilkan mahasiswa yang Alamat nya di cipetir
+
+
+          \codeListing{6}
+
+
+    \item Tampikan mahasiswa yang tempat lahir nya selain di cianjur
+
+
+          \codeListing{7}
+
+
+    \item Tampilkan mahasiwa yang umur nya di bawah sama dengan 20 tahun
+
+
+          \codeListing{8}
+
+
+    \item Tampilkan jumlah dosen berdasarkan jenis kelamin
+
+
+          \codeListing{9}
+
+
+    \item Tampilkan data mahasiswa
+
+
+          \codeListing{10}
+
+
+  \end{enumerate}
+
+\end{document}

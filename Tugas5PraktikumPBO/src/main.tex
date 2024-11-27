@@ -17,19 +17,15 @@
   breakatwhitespace=true,         
   breakautoindent=true,
   breaklines=true,                 
-  captionpos=t,                    
+  captionpos=b,                    
   keepspaces=false,                 
   showspaces=false,                
   showstringspaces=false,
   showtabs=false,                  
   frame=single,
-  stepnumber=1,                                           % the step between two line-numbers. If it's 1 each line will be numbered
+  stepnumber=1,% the step between two line-numbers. If it's 1 each line will be numbered
   tabsize=2
   }
-
-  \renewcommand\lstlistingname{}
-  \DeclareCaptionFormat{listing}{}
-  \captionsetup[lstlisting]{labelformat=empty}
 
   \newcommand{\lstinputwithcaption}[2]{%
     \lstinputlisting[caption={\texttt{#2}}]{#1}%
@@ -62,7 +58,8 @@
       NPM: 5520123104
 
       \begin{enumerate}
-        \item No 3
+      \setcounter{enumi}{2}
+        \item 
 
           \begin{multicols}{2}
             \begin{center}
@@ -71,7 +68,7 @@
             \end{center}
           \end{multicols}
 
-        \item No 4
+        \item 
 
           \begin{multicols}{2}
             \begin{center}
@@ -80,7 +77,9 @@
             \end{center}
           \end{multicols}
 
-        \item No 5
+        \newpage
+
+        \item 
 
           \begin{multicols}{2}
             \begin{center}
@@ -96,7 +95,7 @@
 
         \newpage
 
-        \item No 6
+        \item 
 
           \begin{multicols}{2}
             \begin{center}
@@ -110,7 +109,7 @@
             \end{center}
           \end{multicols}
 
-        \item soal 7
+        \item 
 
           \begin{multicols}{2}
             \begin{center}
@@ -127,7 +126,7 @@
             \end{center}
           \end{multicols}
 
-        \item soal 8
+        \item 
 
           \begin{multicols}{2}
             \begin{center}
