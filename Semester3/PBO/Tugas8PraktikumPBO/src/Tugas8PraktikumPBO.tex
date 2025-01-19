@@ -1,0 +1,168 @@
+\documentclass[10pt,a4paper]{article}
+
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{ragged2e}
+\usepackage{multicol}
+\usepackage{caption}
+
+\input{./base/base.tex}
+
+\geometry{margin=0.3cm}
+\graphicspath { {./img/} }
+
+\captionsetup[lstlisting]{labelformat=empty}
+
+\pagenumbering{gobble}
+\date{}
+
+\newcommand{\lstinputwithcaption}[2]{%
+  \lstinputlisting[language=Java,caption={\texttt{#2}}]{#1}%
+}
+
+
+\newcommand{\codeListing}[6] {
+
+  \begin{multicols}{2}
+    \lstinputwithcaption{#1}{#2}
+
+    \columnbreak
+
+    \lstinputwithcaption{#3}{#4}
+
+  \end{multicols}
+
+  \begin{center}
+    \includegraphics[scale=#5]{#6}
+  \end{center}
+
+}
+
+\begin{document}
+
+NAMA: Radinal Shidiq Saragih
+
+KELAS: IF C 2023
+
+NPM: 5520123104
+
+\begin{enumerate}
+
+  \item 
+
+    \begin{multicols}{2}
+
+      \begin{center}
+
+        \lstinputwithcaption{./code/src/soal1/Main.java}{Main.java}
+
+        \lstinputwithcaption{./code/src/soal1/Hewan.java}{Main.java}
+
+        \columnbreak
+
+        \lstinputwithcaption{./code/src/soal1/HewanKakiDua.java}{HewanKakiDua.java}
+        
+        \lstinputwithcaption{./code/src/soal1/HewanKakiEmpat.java}{HewanKakiEmpat.java}
+
+        \lstinputwithcaption{./code/src/soal1/HewanKakiEnam.java}{HewanKakiEnam.java}
+
+        \lstinputwithcaption{./code/src/soal1/HewanKakiDelapan.java}{HewanKakiDelapan.java}
+
+        \includegraphics[scale=0.5]{S1.png}
+
+      \end{center}
+
+    \end{multicols}
+
+    \newpage
+
+  \item 
+
+      \begin{center}
+
+        \lstinputwithcaption{./code/src/soal2/Main.java}{Main.java}
+
+        \includegraphics[scale=1.0]{S2.png}
+
+      \end{center}
+
+
+  \item 
+
+      \begin{center}
+
+        \lstinputwithcaption{./code/src/soal3/Kubus.java}{Kubus.java}
+
+        \includegraphics[scale=1.0]{S3.png}
+
+      \end{center}
+
+  \item 
+
+    \begin{multicols}{2}
+
+      \begin{center}
+
+        \lstinputwithcaption{./code/src/soal4/Hewan.java}{Hewan.java}
+        \lstinputwithcaption{./code/src/soal4/Kucing.java}{Kucing.java}
+
+        \columnbreak
+
+        \lstinputwithcaption{./code/src/soal4/Main.java}{Main.java}
+
+
+        
+        \includegraphics[scale=1.0]{S4.png}
+
+      \end{center}
+
+    \end{multicols}
+
+  \item 
+
+    \begin{multicols}{2}
+
+      \begin{center}
+
+        \lstinputwithcaption{./code/src/soal5/Games.java}{Games.java}
+
+        \lstinputwithcaption{./code/src/soal5/Komik.java}{Komik.java}
+
+        \columnbreak
+
+        \lstinputwithcaption{./code/src/soal5/Produk.java}{Produk.java}
+        
+        \newpage
+
+        \lstinputwithcaption{./code/src/soal5/Main.java}{Main.java}
+
+        \includegraphics[scale=1.0]{S5.png}
+
+      \end{center}
+
+    \end{multicols}
+
+  \item 
+
+    \begin{multicols}{2}
+
+      \begin{center}
+
+        \lstinputwithcaption{./code/src/soal6/Games.java}{Games.java}
+
+        \lstinputwithcaption{./code/src/soal6/Komik.java}{Komik.java}
+
+        \columnbreak
+        
+        \lstinputwithcaption{./code/src/soal6/Main.java}{Main.java}
+
+        
+        \includegraphics[scale=1.0]{S6.png}
+
+      \end{center}
+
+    \end{multicols}
+
+\end{enumerate}
+
+\end{document}

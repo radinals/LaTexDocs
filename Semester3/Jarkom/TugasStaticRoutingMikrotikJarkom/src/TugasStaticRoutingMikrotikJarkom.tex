@@ -1,0 +1,95 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{ragged2e}
+\usepackage{multicol}
+\usepackage{caption}
+
+\input{./base/base.tex}
+
+\geometry{margin=1cm}
+\graphicspath { {./img/} }
+
+\pagenumbering{gobble}
+\date{}
+\captionsetup[figure]{labelformat=empty}
+
+\begin{document}
+Nama: Radinal Shidiq Saragih
+
+Kelas: IF C 2023
+
+NPM: 5520123104
+
+\begin{center}
+  \section*{Tugas Routing Static Mikrotik}
+  \vspace{0.5cm}
+
+    \includegraphics[scale=0.4]{TOPOLOGI.png}
+
+  \vspace{0.5cm}
+\end{center}
+
+\subsection*{Konfigurasi Router}
+
+\begin{enumerate}
+	\item R1
+
+		\includegraphics[scale=0.5]{R1.png}
+
+		\includegraphics[scale=0.5]{R1ROUTE.png}
+
+	\item R2
+
+		\includegraphics[scale=0.5]{R2.png}
+
+		\includegraphics[scale=0.5]{R2ROUTE.png}
+
+	\item R3
+
+		\includegraphics[scale=0.5]{R3.png}
+
+		\includegraphics[scale=0.5]{R3ROUTE.png}
+\end{enumerate}
+
+\begin{center}
+\subsubsection*{KONFIGURASI IP}
+\begin{enumerate}
+
+  \item PC1
+
+    \includegraphics[scale=0.5]{PC1IPCONF.png}
+
+  \item PC2
+
+    \includegraphics[scale=0.5]{PC2IPCONF.png}
+
+  \item PC3
+
+    \includegraphics[scale=0.5]{PC3IPCONF.png}
+
+  \item PC4
+
+    \includegraphics[scale=0.5]{PC4IPCONF.png}
+
+  \item TinyCore
+
+    \includegraphics[scale=0.5]{TINYCOREIPCONF.png}
+
+  \item Zentyal
+
+    \includegraphics[scale=0.5]{ZENTYALIPCONF1.png}
+
+    \includegraphics[scale=0.5]{ZENTYALIPCONF2.png}
+
+\end{enumerate}
+\end{center}
+
+
+\begin{center}
+\subsubsection*{PENGUJIAN PING}
+	\includegraphics[scale=0.5]{IPTEST.png}
+\end{center}
+
+\end{document}

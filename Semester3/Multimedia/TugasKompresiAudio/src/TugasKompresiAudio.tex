@@ -1,0 +1,99 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{ragged2e}
+\usepackage{multicol}
+\usepackage{adjustbox}
+
+\input{./base/base.tex}
+
+\geometry{margin=1cm}
+\graphicspath { {./img/} }
+
+\pagenumbering{gobble}
+\date{}
+
+\begin{document}
+
+Radinal Shidiq Saragih
+
+IF C 2023 5520123104
+
+\vspace{1cm}
+
+\textbf{Sinyal Analog}
+\begin{itemize}
+    \item Frekuensi sinyal analog: $f = 1 \, \text{kHz}$.
+    \item Amplitudo maksimum sinyal: $A = 1.0 \, \text{V}$.
+    \item Frekuensi sampling: $f_s = 8 \, \text{kHz}$.
+    \item Bit-depth kuantisasi: $\text{Bit-depth} = 3 \, \text{bit}$ (8 tingkat kuantisasi).
+\end{itemize}
+    
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{Waktu ($t_n$) [s]} & \textbf{Amplitudo Sinyal ($x(t)$) [V]} & \textbf{Level Kuantisasi} & \textbf{Kuantisasi ($Q$) [V]} & \textbf{Biner} \\ \hline
+0.0000                     & 0.000                                 & Level 5                  & 0.25                          & 101            \\ \hline
+0.000125                   & 0.707                                 & Level 7                  & 0.75                          & 111            \\ \hline
+0.000250                   & 1.000                                 & Level 8                  & 1.00                          & 111            \\ \hline
+0.000375                   & 0.707                                 & Level 7                  & 0.75                          & 110            \\ \hline
+0.000500                   & 0.000                                 & Level 5                  & 0.25                          & 101            \\ \hline
+0.000625                   & -0.707                                & Level 3                  & -0.75                         & 011            \\ \hline
+0.000750                   & -1.000                                & Level 1                  & -1.00                         & 000            \\ \hline
+0.000875                   & -0.707                                & Level 3                  & -0.75                         & 011            \\ \hline
+\end{tabular}
+\end{table}
+
+\textbf{Kompresi}
+
+\begin{itemize}
+  \item Data(Biner) : [101, 111, 111, 110, 101, 011, 000, 011]
+  \item Data (Decimal) : [ 5, 7, 7, 6, 5, 3, 0, 3 ]
+  \item Terdapat 8 nilai.
+  \item Bit depth 3 bit.
+\end{itemize}
+
+Total Ukuran data asli:
+
+\begin{center}
+  Ukuran Awal = 8 x 3 = 24 bit
+\end{center}
+
+Dikompresi dengan Metode Kuantisasi
+
+dengan 4 tingkat kuantisasi, yaitu
+
+\begin{center}
+
+  0 - 1 = 1 
+
+  2 - 3 = 4 
+
+  4 - 5 = 6 
+
+  6 - 7 = 8
+
+\end{center}
+
+Data (Setelah Kuantisasi) = [ 6, 8, 8, 8, 6, 4, 1, 3 ]
+
+\vspace{1cm}
+
+Karena ada 4 tingkatan kuantisasi, maka hanya memerlukan 2 bit untuk
+menyimpan data. Maka ukuran setelah kuantisasi adalah
+
+\begin{center}
+  Ukuran Setelah Kuantisasi = 8 x 2 = 16 bit
+\end{center}
+
+Hingga rasio kompresinya adalah
+
+\begin{center}
+  Rasio Kompresi = ((24 - 16) / 24) x 100\% = 50\%
+\end{center}
+
+Jadi setelah dikompresi data menjadi 50\% lebih kecil dari sebelumnya.
+
+\end{document}

@@ -1,0 +1,60 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{ragged2e}
+\usepackage{multicol}
+
+\input{./base/base.tex}
+
+\geometry{margin=1cm}
+\graphicspath { {./img/} }
+
+\pagenumbering{gobble}
+\date{}
+
+\begin{document}
+
+    Radinal Shidiq Saragih
+
+    IF C 2023 5520123104
+
+    \vspace{1cm}
+    
+    Potongan spesifikasi dari sebuah server perusahaan streaming sebagai berikut.
+
+    \begin{itemize}
+      \item Bitrate per video: 4 Mbps
+      \item Ukuran Buffer: 20 MB
+      \item Kecepatan Transfer Data: 1.5 Mbps
+      \item Waktu Pengkodean Server: 0.7 detik
+      \item Waktu Transmisi Jaringan: 1.2 detik
+      \item Waktu Dekoding & Pemutaran Klien: 0.8 detik
+    \end{itemize}
+
+    Dari informasi diatas, didapatkan perhitungan berikut
+    \begin{enumerate}
+      \item Waktu Buffering
+        \[
+          Ukuran\ Buffer(bit)\ =\ 20\ X\ 8.000.000\ =\ 160.000.000\ bit
+        \]
+
+        \[
+          Kecepatan\ Transfer(bit)\ =\ 1.5\ X\ 1.000.000\ =\ 1.500.000\ bps
+        \]
+
+        \[
+          Waktu\ Buffering(detik)\ = \frac{160.000.000}{1.500.000} = 106.6\ detik
+        \]
+
+      \item Latency
+        \[
+          Latency\ Total\ =\ 0.7\ detik\ +\ 1.2\ detik\ +\ 0.8\ detik\ =\ 2.7\ detik
+        \]
+    \end{enumerate}
+
+    Dari perhitungan diatas, didapatkan waktu buffering yang sangat buruk dimana
+    seorang user harus menunggu lebih dari 100 detik sebelum video dapat dimuat,
+    maka server tersebut sangat tidak optimal.
+
+\end{document}

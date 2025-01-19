@@ -1,0 +1,117 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{ragged2e}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{caption}
+
+\input{./base/base.tex}
+
+\geometry{margin=1cm}
+\graphicspath { {./img/} }
+
+\geometry{a4paper, margin=1cm}
+\graphicspath{{img}}
+\pagenumbering{gobble}
+\date{}
+\captionsetup[figure]{labelformat=empty}
+
+\pagenumbering{gobble}
+\date{}
+
+\begin{document}
+
+Nama: Radinal Shidiq Saragih
+
+Kelas: IF C 2023
+
+NPM: 5520123104
+
+\begin{center}
+  \section*{Tugas Setup DHCP Mikrotik}
+  \vspace{0.5cm}
+
+    \includegraphics[scale=0.4]{TOPOLOGI.png}
+
+  \vspace{0.5cm}
+\end{center}
+
+\subsection*{Konfigurasi Router}
+
+\begin{enumerate}
+  \item Konfigurasi Interface
+
+    \begin{enumerate}
+      \item Ethernet 1
+
+        \includegraphics[scale=0.4]{E1IP.png}
+
+      \item Ethernet 2
+
+        \includegraphics[scale=0.4]{E2IP.png}
+
+    \end{enumerate}
+
+    \begin{center}
+      \includegraphics[scale=0.4]{IPSHOW.png}
+    \end{center}
+
+  \item Konfigurasi DHCP
+
+    \begin{enumerate}
+      \item Ethernet 1
+
+        \includegraphics[scale=0.4]{E1DHCP1.png}
+
+        \includegraphics[scale=0.4]{E1DHCP2.png}
+
+      \item Ethernet 2
+
+        \includegraphics[scale=0.4]{E2DHCP1.png}
+
+        \includegraphics[scale=0.4]{E2DHCP2.png}
+    \end{enumerate}
+\end{enumerate}
+
+\newpage
+
+\subsubsection*{DHCP VPCS}
+\begin{enumerate}
+  \item PC1
+
+      \includegraphics[scale=0.4]{PC1DHCP.png}
+
+  \item PC2
+
+      \includegraphics[scale=0.4]{PC2DHCP.png}
+
+  \item PC3
+
+      \includegraphics[scale=0.4]{PC3DHCP.png}
+
+  \item PC4
+
+      \includegraphics[scale=0.4]{PC4DHCP.png}
+
+\end{enumerate}
+
+\subsubsection*{Uji Ping VPCS}
+\begin{enumerate}
+
+  \item PC1 Ke PC2
+
+    \includegraphics[scale=0.5]{PC1PC2.png}
+
+  \item PC1 Ke PC3
+
+    \includegraphics[scale=0.5]{PC1PC3.png}
+
+  \item PC1 Ke PC4
+
+    \includegraphics[scale=0.5]{PC1PC4.png}
+
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,162 @@
+\documentclass[10pt,a4paper]{article}
+
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{ragged2e}
+\usepackage{multicol}
+\usepackage{caption}
+
+\input{./base/base.tex}
+
+\geometry{margin=0.5cm}
+\graphicspath { {./img/} }
+
+\captionsetup[lstlisting]{labelformat=empty}
+
+\pagenumbering{gobble}
+\date{}
+
+\newcommand{\lstinputwithcaption}[2]{%
+  \lstinputlisting[language=Java,caption={\texttt{#2}}]{#1}%
+}
+
+
+\newcommand{\codeListing}[6] {
+
+  \begin{multicols}{2}
+    \lstinputwithcaption{#1}{#2}
+
+    \columnbreak
+
+    \lstinputwithcaption{#3}{#4}
+
+  \end{multicols}
+
+  \begin{center}
+    \includegraphics[scale=#5]{#6}
+  \end{center}
+
+}
+
+\begin{document}
+
+NAMA: Radinal Shidiq Saragih
+
+KELAS: IF C 2023
+
+NPM: 5520123104
+
+\begin{enumerate}
+
+%  \item 
+%
+%    \begin{multicols}{2}
+%
+%      \begin{center}
+%
+%        \lstinputwithcaption{./code/src/soal1/Main.java}{Main.java}
+%
+%        \columnbreak
+%
+%        \includegraphics[scale=1.0]{s1.png}
+%
+%      \end{center}
+%
+%    \end{multicols}
+%
+%  \item 
+%
+%    \begin{multicols}{2}
+%
+%      \begin{center}
+%
+%        \lstinputwithcaption{./code/src/soal2/Main.java}{Main.java}
+%
+%        \columnbreak
+%
+%        \includegraphics[scale=1.0]{s2.png}
+%
+%      \end{center}
+%
+%    \end{multicols}
+%
+%  \item 
+%    \begin{multicols}{2}
+%
+%      \begin{center}
+%
+%        \lstinputwithcaption{./code/src/soal3/Main.java}{Main.java}
+%
+%        \columnbreak
+%
+%        \includegraphics[scale=1.0]{s3.png}
+%
+%      \end{center}
+%
+%    \end{multicols}
+%
+%  \newpage
+  \setcounter{enumi}{3}
+
+  \item 
+
+    \begin{multicols}{2}
+
+      \begin{center}
+
+        \lstinputwithcaption{./code/src/soal4/Kasir.java}{Kasir.java}
+
+        \columnbreak
+        \lstinputwithcaption{./code/src/soal4/Main.java}{Main.java}
+
+        \includegraphics[scale=0.6]{s4.png}
+
+      \end{center}
+
+    \end{multicols}
+
+  \item 
+
+
+      \begin{center}
+
+        \lstinputwithcaption{./code/src/soal5/Main.java}{Main.java}
+
+        \includegraphics[scale=0.8]{s5.png}
+
+      \end{center}
+
+  \newpage
+
+  \item 
+
+    \begin{multicols}{2}
+
+      \begin{center}
+
+
+        \lstinputwithcaption{./code/src/soal6/Main.java}{Main.java}
+
+        \columnbreak
+
+        \lstinputwithcaption{./code/src/soal6/PenghitungRataRata.java}{PenghitungRataRata.java}
+
+        \includegraphics[scale=1.0]{s6.png}
+
+      \end{center}
+
+    \end{multicols}
+
+  \item 
+
+      \begin{center}
+
+        \lstinputwithcaption{./code/src/soal7/Main.java}{Main.java}
+
+        \includegraphics[scale=1.0]{s7.png}
+
+      \end{center}
+
+\end{enumerate}
+
+\end{document}

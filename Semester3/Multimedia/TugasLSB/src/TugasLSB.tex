@@ -1,0 +1,72 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{ragged2e}
+\usepackage{multicol}
+\usepackage{adjustbox}
+
+\input{./base/base.tex}
+
+\geometry{margin=1cm}
+\graphicspath { {./img/} }
+
+\pagenumbering{gobble}
+\date{}
+
+\begin{document}
+
+Radinal Shidiq Saragih
+
+IF C 2023 5520123104
+
+\vspace{1cm}
+
+\begin{center}
+  \begin{adjustbox}{scale=1,center}
+    \begin{tabular}{ |c|c| } 
+      \hline
+      Pixel & Biner     \\ \hline
+      1     & 10110101  \\ \hline
+      2     & 10101101  \\ \hline
+      3     & 10100100  \\ \hline
+      4     & 10101001  \\ \hline
+      5     & 10110011  \\ \hline
+      6     & 10010100  \\ \hline
+      7     & 11110111  \\ \hline
+      8     & 11000100  \\ \hline
+      9     & 10000100  \\ \hline
+      10    & 11011000  \\ \hline
+    \end{tabular}
+  \end{adjustbox}
+\end{center}
+
+Watermark = 'RSS'
+\begin{itemize}
+  \item R = '01010010'
+  \item S = '01010011'
+  \item S = '01010011'
+\end{itemize}
+
+Watermark = 0101001001010011\textbf{11111110}
+
+\begin{center}
+  \begin{adjustbox}{scale=1,center}
+    \begin{tabular}{ |c|c|c|c| } 
+      \hline
+      Pixel & Biner Sebelumnya & Bit Watermark & Biner Sesudah Watermarking \\ \hline
+      1     & 10110101         &      0        & 10110100       \\ \hline
+      2     & 10101101         &      1        & 10101101       \\ \hline
+      3     & 10100100         &      0        & 10100100       \\ \hline
+      4     & 10101001         &      1        & 10101001       \\ \hline
+      5     & 10110011         &      0        & 10110010       \\ \hline
+      6     & 10010100         &      0        & 10010100       \\ \hline
+      7     & 11110111         &      1        & 11110111       \\ \hline
+      8     & 11000100         &      0        & 11000100       \\ \hline
+      9     & 10000100         &      0        & 10000100       \\ \hline
+      10    & 11011000         &      1        & 11011001       \\ \hline
+    \end{tabular}
+  \end{adjustbox}
+\end{center}
+
+\end{document}

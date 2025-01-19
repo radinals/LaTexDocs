@@ -1,0 +1,570 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{ragged2e}
+\usepackage{multicol}
+\usepackage{adjustbox}
+
+\input{./base/base.tex}
+
+\geometry{margin=1cm}
+\graphicspath { {./img/} }
+
+\pagenumbering{gobble}
+\date{}
+
+\begin{document}
+
+Nama : Radinal Shidiq Saragih
+
+Kelas : IF C 2023
+
+NPM : 5520123104
+
+\vspace{1cm}
+
+\begin{center}
+Data: \textbf{34,67,60,68,56,35 ,22 ,24, 57, 44, 10, 80, 45, 37}
+
+N: \textbf{14}
+\end{center}
+
+\section{Coalesced Hashing With Link}
+
+\begin{enumerate}
+
+  \item LISCH (Late Insertion Standart Coalesced Hashing)
+
+    \begin{multicols}{2}
+
+      \begin{center}
+        \begin{adjustbox}{scale=1,center}
+          \begin{tabular}{ |c|c|c| } 
+            \hline \multicolumn{3}{|c|}{Memori} \\ \hline \hline 
+            NO SLOT & SLOT & LINK \\ \hline \hline
+            0       & 34   &  15  \\ \hline
+            1       & 35   &      \\ \hline
+            2       &      &      \\ \hline
+            3       & 3    &      \\ \hline
+            4       &      &      \\ \hline
+            5       & 56   &  14  \\ \hline
+            6       & 57   &      \\ \hline
+            7       & 24   &      \\ \hline
+            8       &      &      \\ \hline
+            9       & 60   &      \\ \hline
+            10      & 44   &  13  \\ \hline
+            11      & 45   &      \\ \hline
+            12      & 80   &      \\ \hline
+            13      & 10   &      \\ \hline
+            14      & 22   &      \\ \hline
+            15      & 68   &      \\ \hline
+            16      & 67   &      \\ \hline
+
+          \end{tabular}
+        \end{adjustbox}
+      \end{center}
+
+      \begin{center}
+        \begin{adjustbox}{scale=1,center}
+          \begin{tabular}{ |c|c| } 
+            \hline 
+            Data & Mod Data \\ \hline \hline 
+            34 & Mod 17 = 0  \\ \hline
+            67 & Mod 17 = 16 \\ \hline
+            60 & Mod 17 = 9  \\ \hline
+            68 & Mod 17 = 0  \\ \hline
+            56 & Mod 17 = 5  \\ \hline
+            35 & Mod 17 = 1  \\ \hline
+            22 & Mod 17 = 5  \\ \hline
+            24 & Mod 17 = 7  \\ \hline
+            57 & Mod 17 = 6  \\ \hline
+            44 & Mod 17 = 10 \\ \hline
+            10 & Mod 17 = 10 \\ \hline
+            80 & Mod 17 = 12 \\ \hline
+            45 & Mod 17 = 11 \\ \hline
+            37 & Mod 17 = 3  \\ \hline
+
+          \end{tabular}
+        \end{adjustbox}
+      \end{center}
+
+    \end{multicols}
+
+
+  \item LICH (Late Insertion Coalesced Hashing)
+
+    \begin{multicols}{2}
+
+      \begin{center}
+        \begin{adjustbox}{scale=1,center}
+          \begin{tabular}{ |c|c|c| } 
+            \hline \multicolumn{3}{|c|}{Memori} \\ \hline \hline 
+            NO SLOT & SLOT & LINK \\ \hline \hline
+            0       &      &      \\ \hline
+            1       &      &      \\ \hline
+            2       & 34   &  12  \\ \hline
+            3       & 68   &  11  \\ \hline
+            4       &      &      \\ \hline
+            5       & 60   &      \\ \hline
+            6       &      &      \\ \hline
+            7       &      &      \\ \hline
+            8       &      &      \\ \hline
+            9       &      &      \\ \hline
+            10      &      &      \\ \hline
+            11      & 35   &      \\ \hline
+            12      & 56   &      \\ \hline
+            13      & 67   &      \\ \hline
+          \end{tabular}
+        \end{adjustbox}
+      \end{center}
+
+      \begin{center}
+        \begin{adjustbox}{scale=1,center}
+          \begin{tabular}{ |c|c| } 
+            \hline 
+            Data & Mod Data \\ \hline \hline 
+            34 &  Mod 11 = 1  \\ \hline  
+            67 &  Mod 11 = 1  \\ \hline
+            60 &  Mod 11 = 5  \\ \hline
+            68 &  Mod 11 = 2  \\ \hline
+            56 &  Mod 11 = 1  \\ \hline
+            35 &  Mod 11 = 2  \\ \hline
+            22 &  Mod 11 = 0  \\ \hline
+            24 &  Mod 11 = 2  \\ \hline
+            57 &  Mod 11 = 2  \\ \hline
+            44 &  Mod 11 = 0  \\ \hline
+            10 &  Mod 11 = 10 \\ \hline
+            80 &  Mod 11 = 3  \\ \hline
+            45 &  Mod 11 = 1  \\ \hline
+            37 &  Mod 11 = 4  \\ \hline
+
+          \end{tabular}
+        \end{adjustbox}
+      \end{center}
+
+    \end{multicols}
+
+    \newpage
+
+  \item EISCH (Early Insert Coalesced Hashing)
+
+    \begin{multicols}{2}
+
+      \begin{center}
+        \begin{adjustbox}{scale=1,center}
+          \begin{tabular}{ |c|c|c| } 
+            \hline \multicolumn{3}{|c|}{Memori} \\ \hline \hline 
+            NO SLOT & SLOT & LINK \\ \hline \hline
+            0       & 34   &  1   \\ \hline
+            1       & 68   &  2   \\ \hline
+            2       & 35   &      \\ \hline
+            3       & 37   &      \\ \hline
+            4       &      &      \\ \hline
+            5       & 56   &  6   \\ \hline
+            6       & 22   &  8   \\ \hline
+            7       & 24   &      \\ \hline
+            8       & 57   &      \\ \hline
+            9       & 60   &      \\ \hline
+            10      & 44   &  11  \\ \hline
+            11      & 10   &  13  \\ \hline
+            12      & 80   &      \\ \hline
+            13      & 45   &      \\ \hline
+            14      &      &      \\ \hline
+            15      &      &      \\ \hline
+            16      & 67   &      \\ \hline
+          \end{tabular}
+        \end{adjustbox}
+      \end{center}
+
+      \begin{center}
+        \begin{adjustbox}{scale=1,center}
+          \begin{tabular}{ |c|c| } 
+            \hline 
+            Data & Mod Data \\ \hline \hline 
+            34  & Mod 17 = 0 \\ \hline
+            67  & Mod 17 = 16 \\ \hline
+            60  & Mod 17 = 9 \\ \hline
+            68  & Mod 17 = 0 \\ \hline
+            56  & Mod 17 = 5 \\ \hline
+            35  & Mod 17 = 1 \\ \hline
+            22  & Mod 17 = 5 \\ \hline
+            24  & Mod 17 = 7 \\ \hline
+            57  & Mod 17 = 6 \\ \hline
+            44  & Mod 17 = 10 \\ \hline
+            10  & Mod 17 = 10 \\ \hline
+            80  & Mod 17 = 12 \\ \hline
+            45  & Mod 17 = 11 \\ \hline
+            37  & Mod 17 = 3 \\ \hline
+
+          \end{tabular}
+        \end{adjustbox}
+      \end{center}
+
+    \end{multicols}
+
+  \item REISCH (Random Early Insert Coalesced Hashing)
+
+    \begin{multicols}{2}
+
+      \begin{center}
+        \begin{adjustbox}{scale=1,center}
+          \begin{tabular}{ |c|c|c| } 
+            \hline \multicolumn{3}{|c|}{Memori} \\ \hline \hline 
+            NO SLOT & SLOT & LINK \\ \hline \hline
+            0       & 34   &  1   \\ \hline
+            1       & 35   &  2   \\ \hline
+            2       &      &      \\ \hline
+            3       & 37   &      \\ \hline
+            4       & 68   &      \\ \hline
+            5       & 56   &  6   \\ \hline
+            6       & 57   &  8   \\ \hline
+            7       & 24   &      \\ \hline
+            8       & 45   &      \\ \hline
+            9       & 60   &      \\ \hline
+            10      & 44   &  11  \\ \hline
+            11      & 22   &  13  \\ \hline
+            12      & 80   &  14  \\ \hline
+            13      &      &   8  \\ \hline
+            14      & 11   &      \\ \hline
+            15      &      &      \\ \hline
+            16      & 67   &      \\ \hline
+          \end{tabular}
+        \end{adjustbox}
+      \end{center}
+
+      \begin{center}
+        \begin{adjustbox}{scale=1,center}
+          \begin{tabular}{ |c|c| } 
+            \hline 
+            Data & Mod Data \\ \hline \hline 
+            34  & Mod 17 = 0 \\ \hline
+            67  & Mod 17 = 16 \\ \hline
+            60  & Mod 17 = 9 \\ \hline
+            68  & Mod 17 = 0 \\ \hline
+            56  & Mod 17 = 5 \\ \hline
+            35  & Mod 17 = 1 \\ \hline
+            22  & Mod 17 = 5 \\ \hline
+            24  & Mod 17 = 7 \\ \hline
+            57  & Mod 17 = 6 \\ \hline
+            44  & Mod 17 = 10 \\ \hline
+            10  & Mod 17 = 10 \\ \hline
+            80  & Mod 17 = 12 \\ \hline
+            45  & Mod 17 = 11 \\ \hline
+            37  & Mod 17 = 3 \\ \hline
+          \end{tabular}
+        \end{adjustbox}
+      \end{center}
+
+    \end{multicols}
+
+
+    \newpage
+
+  \item BLISCH (Bidirection Late Insertion  Standart Coalesced Hashing)
+
+    \begin{multicols}{2}
+
+      \begin{center}
+        \begin{adjustbox}{scale=1,center}
+          \begin{tabular}{ |c|c|c| } 
+            \hline \multicolumn{3}{|c|}{Memori} \\ \hline \hline 
+            NO SLOT & SLOT & LINK \\ \hline \hline
+            0       & 34   &  15  \\ \hline
+            1       & 35   &      \\ \hline
+            2       & 22   &      \\ \hline
+            3       & 37   &      \\ \hline
+            4       &      &      \\ \hline
+            5       & 56   &   2  \\ \hline
+            6       & 57   &      \\ \hline
+            7       & 24   &      \\ \hline
+            8       &      &      \\ \hline
+            9       & 60   &      \\ \hline
+            10      & 44   &  14  \\ \hline
+            11      & 45   &      \\ \hline
+            12      & 80   &      \\ \hline
+            13      &      &      \\ \hline
+            14      & 10   &      \\ \hline
+            15      & 68   &      \\ \hline
+            16      & 67   &      \\ \hline
+          \end{tabular}
+        \end{adjustbox}
+      \end{center}
+
+
+      \begin{center}
+        \begin{adjustbox}{scale=1,center}
+          \begin{tabular}{ |c|c| } 
+            \hline 
+            Data & Mod Data \\ \hline \hline 
+            34  & Mod 17 = 0 \\ \hline
+            67  & Mod 17 = 16 \\ \hline
+            60  & Mod 17 = 9 \\ \hline
+            68  & Mod 17 = 0 \\ \hline
+            56  & Mod 17 = 5 \\ \hline
+            35  & Mod 17 = 1 \\ \hline
+            22  & Mod 17 = 5 \\ \hline
+            24  & Mod 17 = 7 \\ \hline
+            57  & Mod 17 = 6 \\ \hline
+            44  & Mod 17 = 10 \\ \hline
+            10  & Mod 17 = 10 \\ \hline
+            80  & Mod 17 = 12 \\ \hline
+            45  & Mod 17 = 11 \\ \hline
+            37  & Mod 17 = 3 \\ \hline
+          \end{tabular}
+        \end{adjustbox}
+      \end{center}
+
+    \end{multicols}
+
+    \section*{Coalesced Hashing Without Link}
+
+\end{enumerate}
+
+\begin{enumerate}
+
+  \item Progressive Overflow
+
+    \begin{multicols}{2}
+
+      \begin{center}
+        \begin{adjustbox}{scale=1,center}
+          \begin{tabular}{ |c|c| } 
+            \hline \multicolumn{2}{|c|}{Memori} \\ \hline \hline 
+            NO SLOT & SLOT  \\ \hline \hline
+            0       & 34    \\ \hline
+            1       & 68    \\ \hline
+            2       & 35    \\ \hline
+            3       & 37    \\ \hline
+            4       &       \\ \hline
+            5       & 56    \\ \hline
+            6       & 22    \\ \hline
+            7       & 24    \\ \hline
+            8       & 57    \\ \hline
+            9       & 60    \\ \hline
+            10      & 44    \\ \hline
+            11      & 10    \\ \hline
+            12      & 80    \\ \hline
+            13      & 45    \\ \hline
+            14      &       \\ \hline
+
+          \end{tabular}
+        \end{adjustbox}
+      \end{center}
+
+      \begin{center}
+        \begin{adjustbox}{scale=1,center}
+          \begin{tabular}{ |c|c| } 
+            \hline 
+            Data & Mod Data \\ \hline \hline 
+            34 & Mod 17 = 0  \\ \hline
+            67 & Mod 17 = 16 \\ \hline
+            60 & Mod 17 = 9  \\ \hline
+            68 & Mod 17 = 0  \\ \hline
+            56 & Mod 17 = 5  \\ \hline
+            35 & Mod 17 = 1  \\ \hline
+            22 & Mod 17 = 5  \\ \hline
+            24 & Mod 17 = 7  \\ \hline
+            57 & Mod 17 = 6  \\ \hline
+            44 & Mod 17 = 10 \\ \hline
+            10 & Mod 17 = 10 \\ \hline
+            80 & Mod 17 = 12 \\ \hline
+            45 & Mod 17 = 11 \\ \hline
+            37 & Mod 17 = 3  \\ \hline
+
+          \end{tabular}
+        \end{adjustbox}
+      \end{center}
+
+    \end{multicols}
+
+    \newpage
+
+  \item Bucket
+
+    \begin{multicols}{2}
+
+      \begin{center}
+        \begin{adjustbox}{scale=1,center}
+          \begin{tabular}{ |c|c|c|c|c| } 
+            \hline \multicolumn{3}{|c|}{Memori} \\ \hline \hline 
+            NO SLOT & \multicolumn{2}{c|}{SLOT} \\ \hline
+            0       & 34   & 68  \\ \hline
+            1       & 35   &     \\ \hline
+            2       &      &     \\ \hline
+            3       & 37   &     \\ \hline
+            4       &      &     \\ \hline
+            5       & 56   & 22  \\ \hline
+            6       & 57   &     \\ \hline
+            7       & 24   &     \\ \hline
+            8       &      &     \\ \hline
+            9       & 60   &     \\ \hline
+            10      & 44   & 10  \\ \hline
+            11      & 45   &     \\ \hline
+            12      & 80   &     \\ \hline
+            13      &      &     \\ \hline
+            14      & 67   &     \\ \hline
+
+          \end{tabular}
+        \end{adjustbox}
+      \end{center}
+
+      \begin{center}
+        \begin{adjustbox}{scale=1,center}
+          \begin{tabular}{ |c|c| } 
+            \hline 
+            Data & Mod Data \\ \hline \hline 
+            34 & Mod 17 = 0  \\ \hline
+            67 & Mod 17 = 16 \\ \hline
+            60 & Mod 17 = 9  \\ \hline
+            68 & Mod 17 = 0  \\ \hline
+            56 & Mod 17 = 5  \\ \hline
+            35 & Mod 17 = 1  \\ \hline
+            22 & Mod 17 = 5  \\ \hline
+            24 & Mod 17 = 7  \\ \hline
+            57 & Mod 17 = 6  \\ \hline
+            44 & Mod 17 = 10 \\ \hline
+            10 & Mod 17 = 10 \\ \hline
+            80 & Mod 17 = 12 \\ \hline
+            45 & Mod 17 = 11 \\ \hline
+            37 & Mod 17 = 3  \\ \hline
+
+          \end{tabular}
+        \end{adjustbox}
+      \end{center}
+
+    \end{multicols}
+
+  \item Linier Quetient
+
+    \begin{multicols}{2}
+
+      \begin{center}
+        \begin{adjustbox}{scale=1,center}
+          \begin{tabular}{ |c|c| } 
+            \hline \multicolumn{2}{|c|}{Memori} \\ \hline \hline 
+            NO SLOT & SLOT  \\ \hline
+            0       & 34    \\ \hline
+            1       & 35    \\ \hline
+            2       & 10    \\ \hline
+            3       & 44    \\ \hline
+            4       & 68    \\ \hline
+            5       & 56    \\ \hline
+            6       & 57    \\ \hline
+            7       & 24    \\ \hline
+            8       &       \\ \hline
+            9       & 60    \\ \hline
+            10      & 22    \\ \hline
+            11      & 45    \\ \hline
+            12      & 80    \\ \hline
+            13      & 68    \\ \hline
+            14      &       \\ \hline
+            15      & 37    \\ \hline
+            15      & 67    \\ \hline
+
+          \end{tabular}
+        \end{adjustbox}
+      \end{center}
+
+      \begin{center}
+        \begin{adjustbox}{scale=1,center}
+          \begin{tabular}{ |c|c| } 
+            \hline 
+            Data & Mod Data \\ \hline \hline 
+            34 & Mod 17 = 0  \\ \hline
+            67 & Mod 17 = 16 \\ \hline
+            60 & Mod 17 = 9  \\ \hline
+            68 & Mod 17 = 0  \\ \hline
+            56 & Mod 17 = 5  \\ \hline
+            35 & Mod 17 = 1  \\ \hline
+            22 & Mod 17 = 5  \\ \hline
+            24 & Mod 17 = 7  \\ \hline
+            57 & Mod 17 = 6  \\ \hline
+            44 & Mod 17 = 10 \\ \hline
+            10 & Mod 17 = 10 \\ \hline
+            80 & Mod 17 = 12 \\ \hline
+            45 & Mod 17 = 11 \\ \hline
+            37 & Mod 17 = 3  \\ \hline
+
+          \end{tabular}
+        \end{adjustbox}
+      \end{center}
+
+      \begin{center}
+        \begin{adjustbox}{scale=1,center}
+          \begin{tabular}{ |c| } 
+            \hline 
+            VAR INC \\ \hline \hline 
+            H2(68) = Q(68/17) mod 17 = 4 \\ \hline
+            H2(22) = Q(22/17) mod 17 = 5 \\ \hline
+            H2(44) = (44/17)  mod 17 = 10 \\ \hlin
+            H2(10) = (10/17)  mod 17 = 10 \\ \hline
+            H2(37) = (37/17)  mod 17 = 3 \\ \hline
+
+          \end{tabular}
+        \end{adjustbox}
+      \end{center}
+
+    \end{multicols}
+
+    \newpage
+  \item Binary Tree
+
+    \begin{multicols}{2}
+
+      \begin{center}
+        \begin{adjustbox}{scale=1,center}
+          \begin{tabular}{ |c|c| } 
+            \hline \multicolumn{2}{|c|}{Memori} \\ \hline \hline 
+            NO SLOT & SLOT  \\ \hline
+            0       & 34    \\ \hline
+            1       &       \\ \hline
+            2       &       \\ \hline
+            3       &       \\ \hline
+            4       &       \\ \hline
+            5       &       \\ \hline
+            6       &       \\ \hline
+            7       &       \\ \hline
+            8       &       \\ \hline
+            9       & 60    \\ \hline
+            10      &       \\ \hline
+            11      &       \\ \hline
+            12      &       \\ \hline
+            13      &       \\ \hline
+            14      &       \\ \hline
+            15      &       \\ \hline
+            15      & 67    \\ \hline
+
+          \end{tabular}
+        \end{adjustbox}
+      \end{center}
+
+      \begin{center}
+        \begin{adjustbox}{scale=1,center}
+          \begin{tabular}{ |c|c| } 
+            \hline 
+            Data & Mod Data  \\ \hline \hline 
+            34 & Mod 17 = 0  \\ \hline
+            67 & Mod 17 = 16 \\ \hline
+            60 & Mod 17 = 9  \\ \hline
+            68 & Mod 17 = 0  \\ \hline
+            56 & Mod 17 = 5  \\ \hline
+            35 & Mod 17 = 1  \\ \hline
+            22 & Mod 17 = 5  \\ \hline
+            24 & Mod 17 = 7  \\ \hline
+            57 & Mod 17 = 6  \\ \hline
+            44 & Mod 17 = 10 \\ \hline
+            10 & Mod 17 = 10 \\ \hline
+            80 & Mod 17 = 12 \\ \hline
+            45 & Mod 17 = 11 \\ \hline
+            37 & Mod 17 = 3  \\ \hline
+
+          \end{tabular}
+        \end{adjustbox}
+      \end{center}
+
+    \end{multicols}
+
+\end{enumerate}
+
+\end{document}
