@@ -1,0 +1,480 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{ragged2e}
+\usepackage{multicol}
+\usepackage{listings}
+
+\input{./base/base.tex}
+
+\geometry{margin=1cm}
+\graphicspath { {./img/} }
+
+\pagenumbering{gobble}
+\date{}
+
+\begin{document}
+
+Radinal Shidiq Saragih
+
+IF C 2023
+
+5520123104
+
+\begin{center}
+  \section*{RESUME TUTORIAL CSS W3SCHOOL}
+\end{center}
+
+\section*{Karakteristik}
+
+\begin{itemize}
+  \item CSS adalah singkatan dari Cascading Style Sheets.
+  \item CSS mendefinisikan bagaimana elemen html ditampilkan
+  \item CSS dapat digunakan pada lebih dari satu halaman web
+  \item CSS dapat disimpan secara eksternal dengan file .css.
+\end{itemize}
+
+\subsection*{Cara Menambahkan File Stylesheet CSS}
+
+\begin{lstlisting}
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="mystyle.css">
+  </head>
+  <body>
+
+    <h1>This is a heading</h1>
+    <p>This is a paragraph.</p>
+
+  </body>
+</html>
+\end{lstlisting}
+
+\section*{Syntax}
+
+\begin{lstlisting}
+  h1 { color: blue; font-size: 12px }
+  /* selector(s) { declaration; }*/
+\end{lstlisting}
+
+\subsection*{Selector}
+
+\begin{itemize}
+  \item Selector Simple
+
+    Bedasarkan id(#), nama, class(.).
+
+  \item Selector Combinator
+
+    Bedasarkan relasi, kombinator turunan (spasi), kombinator anak ($>$),
+    kombinator next-sibling (+), kombinator subsquent-sibling(-)
+
+  \item Selector Pseudo-class
+
+    Bedasarkan sebuah keadaan/state.
+
+    \begin{lstlisting}
+    selector:pseudo-class {
+      property: value;
+    }
+    \end{lstlisting}
+
+  \item Selector Pseudo-element
+
+    Bedasarkan area spesifik elemen.
+
+    \begin{lstlisting}
+    selector::pseudo-element {
+      property: value;
+    }
+    \end{lstlisting}
+
+  \item Selector Attribut
+
+    Bedasarkan atribut khusus.
+
+    \begin{lstlisting}
+    a[target] {
+      background-color: yellow;
+    }
+    \end{lstlisting}
+
+\end{itemize}
+
+\subsection*{Warna}
+
+\begin{itemize}
+  \item RGB(A)
+
+    \begin{lstlisting}
+      rgb(255,255,255);
+      rgba(255,255,255,255);
+    \end{lstlisting}
+
+  \item HEX
+
+    \begin{lstlisting}
+      #FFFFFF
+    \end{lstlisting}
+
+  \item HSL(A)
+    \begin{lstlisting}
+      hsl(9,100%,64%)
+      hsla(9,100%,64%,0.5)
+    \end{lstlisting}
+\end{itemize}
+
+\subsection*{Background}
+Styling untuk latar belakang halaman
+
+warna latar belakang.
+
+\begin{lstlisting}
+body {
+  background-color: #000000;
+}
+\end{lstlisting}
+
+gambar untuk latar belakang (berulang).
+
+\begin{lstlisting}
+body {
+  background-image: url("background.png");
+}
+\end{lstlisting}
+
+untuk mengatur arah gambar diulang gunakan background-repeat.
+
+\begin{lstlisting}
+body {
+  background-image: url("background.png");
+  background-repeat: repeat-x; /* horizontal */
+  background-repeat: repeat-y; /* vertical */
+  background-repeat: no-repeat; /* jangan berulang */
+}
+
+\end{lstlisting}
+
+untuk mengatur lokasi gambar gunakan background-position
+
+\begin{lstlisting}
+body {
+  background-image: url("background.png");
+  background-repeat: repeat-x;
+  background-position: center;
+  /*
+    left top
+    left center
+    left bottom
+    right top
+    right center
+    right bottom
+    center top
+    center center
+    center bottom
+    x% y% (lokasi relative)
+    xpos ypos (pixel)
+    init (default)
+    (inherit) dari parent
+  */
+}
+
+\end{lstlisting}
+
+untuk mengatur scrolling
+
+\begin{lstlisting}
+body {
+  background-image: url("bg.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  /*
+    scroll -> scroll dengan halaman.
+    fixed -> tidak akan scroll.
+    local -> scroll dengan konten elemen.
+  */
+}
+
+\end{lstlisting}
+
+format background singkat
+
+\begin{lstlisting}
+body {
+    background: #ffffff url("img_tree.png") no-repeat right top;
+    /* background-color background-image background-repeat background-attachment background-position*/
+}
+
+\end{lstlisting}
+
+\subsection*{Border}
+
+Jenis Border
+\begin{lstlisting}
+border-style: dotted;
+border-top-style: dotted;
+border-right-style: solid;
+border-bottom-style: dotted;
+border-left-style: solid;
+/*
+    dotted
+    dashed
+    solid 
+    double
+    groove
+    ridge 
+    inset 
+    outset
+    none
+    hidden
+*/
+\end{lstlisting}
+
+Ukuran Border
+\begin{lstlisting}
+border-width: thick;
+/*
+  thick, medium, thin
+  (px, pt, cm, em)
+*/
+\end{lstlisting}
+
+Warna Border
+\begin{lstlisting}
+border-color: red; 
+border-color: red green blue yellow;
+          /*ATAS, KANAN, BAWAH, KIRI*/
+\end{lstlisting}
+
+Border Rounded
+\begin{lstlisting}
+border-radius: 5px;
+\end{lstlisting}
+
+Format Singkat
+\begin{lstlisting}
+border: 5px solid red;
+    /* width style color*/
+\end{lstlisting}
+
+\subsection*{Margin}
+
+\begin{lstlisting}
+margin-top: 100px;
+margin-bottom: 100px;
+margin-right: 150px;
+margin-left: 80px;
+
+margin: 25px 50px 75px 100px;
+/* atas kanan bawah kiri */
+
+margin: 25px 50px 100px;
+/* atas kanan-kiri bawah  */
+
+margin: 25px 100px;
+/* atas-bawah kanan-kiri */
+
+margin: 25px;
+/* atas-bawah-kanan-kiri */
+
+margin: auto;
+/* tengahkan elemen secara horizontal */
+\end{lstlisting}
+
+\subsection*{Padding}
+
+\begin{lstlisting}
+padding-top: 100px;
+padding-bottom: 100px;
+padding-right: 150px;
+padding-left: 80px;
+
+padding: 25px 50px 75px 100px;
+/* atas kanan bawah kiri */
+
+padding: 25px 50px 100px;
+/* atas kanan-kiri bawah  */
+
+padding: 25px 100px;
+/* atas-bawah kanan-kiri */
+
+padding: 25px;
+/* atas-bawah-kanan-kiri */
+
+padding: auto;
+/* tengahkan elemen secara horizontal */
+\end{lstlisting}
+
+\subsection*{Height dan Width}
+
+\begin{lstlisting}
+div {
+  height: 200px;
+  width: 50%; /* % -> bedasarkan blok terluar */
+  max-width: 500px; /* limit ukuran elemen */
+  background-color: powderblue;
+}
+\end{lstlisting}
+
+\subsection*{Outline}
+
+Jenis Outline
+\begin{lstlisting}
+outline-style: dotted;
+/*
+    dotted
+    dashed
+    solid 
+    double
+    groove
+    ridge 
+    inset 
+    outset
+    none
+    hidden
+*/
+\end{lstlisting}
+
+Ukuran Outline
+\begin{lstlisting}
+outline-width: thick;
+/*
+  thick, medium, thin
+  (px, pt, cm, em)
+*/
+\end{lstlisting}
+
+Warna Outline
+\begin{lstlisting}
+outline-color: red; 
+outline-color: red green blue yellow;
+          /*ATAS, KANAN, BAWAH, KIRI*/
+\end{lstlisting}
+
+
+Offset Outline
+\begin{lstlisting}
+outline-offset: 15px;
+/*
+  OFFSET DILUAR BORDER
+  (px, pt, cm, em)
+*/
+\end{lstlisting}
+
+\subsection*{Teks}
+
+\begin{lstlisting}
+/* alignment teks */
+text-align: center; 
+text-align-last: left;
+/* center, left, right, justify */
+
+/* arah teks */
+direction: rtl; /* ltr rtl */
+unicode-bidi: bidi-override;
+
+vertical-align: baseline; 
+/*
+  baseline
+  text-top
+  text-bottom
+  sub
+  super
+*/
+
+text-decoration-line: overline; /* overline line-trough underline */
+text-decoration-color: red;
+text-decoration-style: solid;
+/*
+    dotted
+    dashed
+    solid 
+    double
+    groove
+    ridge 
+    inset 
+    outset
+    none
+    hidden
+*/
+text-decoration-thickness: 5px;
+
+text-decoration: underline red double 5px;
+/* line color style thickness */
+
+text-transform: lowercase; /* uppercase lowercase capitalize */
+
+text-indent: 5px; /* indentasi baris pertama */
+letter-spacing: 5px; /* jarak antara karakter */
+word-spacing: 5px; /* jarak antara kata */
+line-hegith: 5px; /* jarak antara baris */
+white-space: nowrap; /* pengaturan whitespace */
+
+text-shadow: 2px 2px 5px red; /* horizontal-shadow vertical-shadow blur warna */
+
+font-family: Arial, Helvetica;
+/* font web-safe
+  Arial (sans-serif)
+  Verdana (sans-serif)
+  Tahoma (sans-serif)
+  Trebuchet MS (sans-serif)
+  Times New Roman (serif)
+  Georgia (serif)
+  Garamond (serif)
+  Courier New (monospace)
+  Brush Script MT (cursive)
+*/
+
+font-style: normal; /* normal italic oblique */
+font-weight: bold; /* normal bold */
+font-variant: normal /* normal small-caps */
+font-size: 5px; /* % em px */
+\end{lstlisting}
+
+\subsection*{Link}
+\begin{lstlisting}
+a:link    /* belum dikunjungi */
+a:visited /* sudah dikunjungi */
+a:hover   /* ketika cursor diatas link */
+a:active  /* ketika diclick */
+\end{lstlisting}
+
+\subsection*{List}
+\begin{lstlisting}
+/* bentuk marker list */
+list-style-type: circle; /* circle square upper-roman lower-alpha none */
+
+/* gambar sebagai marker */
+list-style-image: url('icon.png')
+
+/* posisi marker */
+list-style-position: outside; /* outside inside */
+\end{lstlisting}
+
+\subsection*{Tabel}
+\begin{lstlisting}
+border-collapse: collapse; /* gabungkan border menjadi satu border */
+\end{lstlisting}
+
+\subsection*{Position}
+\begin{lstlisting}
+position: static; /* static relative fixed absolute sticky */
+\end{lstlisting}
+
+\subsection*{Gambar}
+\begin{lstlisting}
+z-index: -1; /* ada dibelakang */
+z-index: 1; /* ada didepan */
+\end{lstlisting}
+
+\section*{Box Model}
+\begin{itemize}
+  \item Content - Area Konten.
+  \item Padding - Area pembatas sekeliling konten.
+  \item Border - Area pembatas sekeliling konten dan padding.
+  \item Margin - Area pembatas disekeliling border.
+\end{itemize}
+
+\end{document}
