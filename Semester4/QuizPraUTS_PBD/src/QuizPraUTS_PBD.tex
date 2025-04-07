@@ -1,0 +1,208 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+\usepackage{geometry}
+\geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+
+\date{}
+\pagenumbering{gobble}
+\begin{document}
+
+Radinal Shidiq Saragih
+
+IF C 2023
+
+5520123104
+
+\section*{1. Kategori Media Penyimpanan}
+\begin{enumerate}[label=\alph*.]
+    \item Jelaskan perbedaan antara penyimpanan volatile dan non-volatile serta berikan masing-masing contohnya!
+
+      Penyimpanan volatile adalah jenis penyimpanan yang membutuhkan daya
+      listrik untuk mempertahankan data. Contohnya adalah RAM.
+
+      Penyimpanan non-volatile tidak membutuhkan daya untuk mempertahankan
+      data, seperti hard disk (HDD) dan solid-state drive (SSD).
+
+      Sehingga jika disuatu saat mesin dimatikan penyimpanan volatile akan
+      kehilangan semua data yang disimpan sedangkan penyimpanan non-volatile
+      akan tetap mempertahankan data yang disimpan didalamnya.
+
+    \item Sebutkan dan jelaskan tiga jenis penyimpanan non-volatile yang umum digunakan dalam sistem basis data!
+
+      \begin{itemize}
+        \item Hard Disk Drive (HDD)
+
+          Media penyimpanan magnetik yang digunakan secara luas dalam sistem basis data karena kapasitas besar dan biaya rendah.
+
+        \item Solid State Drive (SSD)
+
+          Penyimpanan berbasis flash yang lebih cepat dari HDD dengan akses waktu rendah.
+
+        \item Tape Storage 
+
+          Digunakan untuk penyimpanan jangka panjang dan pencadangan karena kapasitas besar dan biaya per GB yang rendah.
+
+      \end{itemize}
+
+
+    \item Mengapa memori utama (RAM) tidak digunakan sebagai satu-satunya media penyimpanan dalam sistem basis data?
+
+      Memori utama tidak digunakan karena hanya bersifat volatile, hingga akan
+      kehilangan data jika daya listrik tidak ada. Lalu memori utama juga umumnya
+      berukuran sangat kecil dibanding penyimpanan yang diberi penyimpanan sekunder,
+      maka akan terbatas dengan jumlah data yang dapat disimpan, dan untuk memperbanyak
+      ukuran dari memori utama hingga mengimbangi ukuran penyimpanan sekunder 
+      jauh lebih mahal daripada membeli HDD atau SSD.
+
+\end{enumerate}
+
+\section*{2. Struktur Media Penyimpanan}
+\begin{enumerate}[label=\alph*.]
+    \item Jelaskan konsep hierarki penyimpanan dalam sistem basis data dan sebutkan level-levelnya!
+
+
+      \begin{itemize}
+        \item Cache
+
+          Penyimpanan tercepat dengan kapasitas kecil. Digunakan untuk mempercepat
+          akses data yang sering dibuka di media penyimpanan yang lambat.
+
+        \item RAM
+
+          Digunakan untuk menyimpan data sementara selama eksekusi.
+          
+        \item Penyimpanan Sekunder
+
+          Penyimpanan utama yang berukuran besar untuk data basis data.
+
+        \item Penyimpanan Tersier
+
+          Digunakan untuk pencadangan dan arsip atau backup.
+
+        \end{itemize}
+
+    \item Bandingkan hard disk drive (HDD) dan solid state drive (SSD) dalam konteks penggunaan basis data!
+
+      Dari segi kecepatan SSD memiliki kecepatan read-write yang lebih baik, karena tidak bergantung
+      pada komponen-komponen bergerak seperti piringan di HDD. Namun HDD memiliki harga
+      yang lebih murah dibanding SSD, jadi HDD berkapasitas besar dapat dibeli dengan harga jauh
+      lebih murah dibanding ukuran yang sama dibentuk HDD. Lalu ada juga faktor kerusakan,
+      HDD lebih beresiko mengalami kerusakan dibanding SSD karena memiliki lebih banyak komponen
+      bergerak.
+
+    \item Bagaimana cara kerja mekanisme buffering dalam basis data untuk meningkatkan efisiensi penyimpanan?
+
+      Mekanisme Buffering adalah mekanisme untuk meningkatkan efisiensi penyimpanan dengan menyimpan
+      secara sementara data yang sering diakses ke memori sebelum ditulis ke penyimpanan sekunder.
+      Tujuannya agar data yang berulang kali diakses dapat dengan cepat diakses untuk kesempatan
+      berikutnya karena tidak harus mencari langsung ke disk.
+
+\end{enumerate}
+
+\section*{3. Konsep Indexing dalam Basis Data}
+\begin{enumerate}[label=\alph*.]
+    \item Apa yang dimaksud dengan indexing dalam basis data dan mengapa hal ini penting?
+
+      Indexing dalam basis data adalah metode untuk meningkatkan kecepatan
+      pencarian data dengan menggunakan struktur indeks yang menunjuk
+      ke lokasi data dalam tabel. Indexing biasanya dilakukan pada data-data yang
+      sering diakses.
+
+    \item Sebutkan dan jelaskan perbedaan antara Primary Index dan Secondary Index!
+
+    \begin{itemize}
+
+        \item Primary Index
+
+          Dibangun pada atribut kunci utama dan bersifat unik.
+
+        \item Secondary Index
+
+          Dibangun pada atribut non-kunci untuk mempercepat pencarian tambahan.
+
+    \end{itemize}
+
+    \item Bagaimana cara kerja B-Tree Index dalam mempercepat pencarian data dalam basis data?
+
+      B-Tree Index bekerja dengan cara menyimpan data dalam struktur pohon
+      yang seimbang, memungkinkan pencarian biner yang cepat dengan
+      kompleksitas \(O(\log n)\).
+
+\end{enumerate}
+
+\section*{4. Concurrency Control}
+\begin{enumerate}[label=\alph*.]
+    \item Jelaskan konsep concurrency control dan mengapa diperlukan dalam sistem basis data!
+
+     Concurrency control adalah mekanisme untuk mengelola eksekusi transaksi
+     secara bersamaan agar mencegah inkonsistensi data. Concurrency control
+     perlu dilakukan karena tanpa pengendalian akses bersamaan pada sebuah data
+     dapat menimbulkan inkonsistensi data (Ghost) yang dapat mengakibatkan
+     bug-bug yang tersembunyi pada sistem yang bergantung pada data tersebut.
+
+    \item Bagaimana mekanisme Two-Phase Locking (2PL) dapat mencegah terjadinya inkonsistensi data dalam transaksi basis data?
+
+    \begin{itemize}
+        \item Growing Phase
+
+          Transaksi memperoleh semua lock yang dibutuhkan.
+
+        \item Shrinking Phase
+
+          Transaksi melepaskan lock setelah selesai.
+
+    \end{itemize}
+
+
+    \item Dua transaksi berikut berjalan secara bersamaan dalam sebuah sistem basis data yang mengakses tabel \textit{Saldo\_Akun}:
+    
+    \textbf{Transaksi T1:}
+    \begin{itemize}
+        \item Read(A)
+        \item A = A + 5000
+        \item Write(A)
+        \item Commit
+    \end{itemize}
+
+    
+    \textbf{Transaksi T2:}
+    \begin{itemize}
+        \item Read(A)
+        \item A = A * 2
+        \item Write(A)
+        \item Commit
+    \end{itemize}
+
+    Asumsikan nilai awal A = 10.000, dan hitung nilai saldo akhirnya dari nilai (A).
+
+    JAWAB:
+
+    Jika T1 dieksekusi lebih dulu: \( A = (10.000 + 5.000) * 2 = 30.000 \)
+
+    Jika T2 dieksekusi lebih dulu: \( A = (10.000 * 2) + 5.000 = 25.000 \)
+
+\end{enumerate}
+
+\section*{5. Arsitektur Sistem Basis Data}
+\begin{enumerate}[label=\alph*.]
+    \item Apa perbedaan antara \textit{Centralized Database System} dan \textit{Distributed Database System}?
+
+      Centralized Database System adalah sistem di mana basis data
+      dikelola dalam satu lokasi pusat.
+
+      Distributed Database System membagi basis data ke beberapa lokasi yang tidak
+      berdekatan yang terhubung dalam jaringan.
+
+    \item Bagaimana arsitektur \textit{Client-Server} bekerja dalam sistem basis data dan apa kelebihannya dibandingkan dengan sistem berbasis file tradisional?
+
+      \begin{itemize}
+        \item Memisahkan tugas pemrosesan dan penyimpanan data. 
+        \item Mengurangi duplikasi data dan meningkatkan keamanan.
+        \item Server dan klien dapat berada dilokasi yang berbeda.
+      \end{itemize}
+
+
+\end{enumerate}
+
+\end{document}
