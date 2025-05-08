@@ -1,0 +1,123 @@
+\usepackage{listings}
+\usepackage{xcolor}
+
+\lstset{
+  backgroundcolor=\color{white},
+  basicstyle=\ttfamily\footnotesize,
+  breaklines=true,
+  columns=flexible,
+  frame=single,
+  keywordstyle=\color{blue},
+  commentstyle=\color{gray},
+  stringstyle=\color{green},
+  showstringspaces=false,
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  stepnumber=1,
+  numbersep=5pt,
+}
+
+
+% Bash
+\lstdefinelanguage{Bash}{
+  morekeywords={
+    if,then,else,elif,fi,for,while,do,done,case,esac,export
+  },
+  sensitive=true,
+  morecomment=[l]\#,
+  morestring=[b]",
+}
+
+% C
+\lstdefinelanguage{C}{
+  morekeywords={
+    auto,break,case,char,const,continue,default,do,double,else,
+    enum,extern,for,if,int,long,register,return,switch,typedef,
+    unsigned,void,volatile,while
+  },
+  sensitive=true,
+  morecomment=[l]//,
+  morecomment=[s]/* */ ,
+  morestring=[b]",
+}
+
+% C++
+\lstdefinelanguage{C++}{
+  morekeywords={
+    alignas,alignof,and,asm,auto,bitand,bitor,bool,break,case,
+    class,compl,const,constexpr,continue,decltype,default,delete,
+    do,double,else,enum,explicit,false,for,friend,goto,if,inline,
+    int,long,mutable namespace,new noexcept,operator,private,
+    protected,public,register,return,short,signed,sizeof,
+    static,static_assert,static_cast,struct,switch,template,this,
+    thread_local,throw,true,try,typedef,typeid,typename,union,
+    unsigned,using,virtual,void,volatile,wchar_t,while
+  },
+  sensitive=true,
+  morecomment=[l]//,
+  morecomment=[s]/* */ ,
+  morestring=[b]",
+}
+
+% Java
+\lstdefinelanguage{Java}{
+  morekeywords={
+    abstract,assert,boolean,break,byte,case,catch,char,class,
+    const,continue,default,do,double,else,enum,extends,final,
+    finally,float, for,goto,if,implements,import,instanceof,int,
+    interface,long,native,new, null,package,private,protected,
+    public,return,short,static,strictfp, super,switch,
+    synchronized,this,throw,throws,transient,true,try,void,
+    volatile,while
+  },
+  sensitive=true,
+  morecomment=[l]//,
+  morecomment=[s]/* */ ,
+  morestring=[b]",
+}
+
+% Go
+\lstdefinelanguage{Go}{
+  morekeywords={
+    break,case,chan,const,continue,
+    default,defer,else,fallthrough,
+    for,function,goto,if,import,interface,
+    map,package,range,return,select,struct,
+    switch,type,var},
+  sensitive=true,
+  morecomment=[l]//,
+  morecomment=[s]/* */ ,
+  morestring=[b]",
+}
+
+% PHP
+\lstdefinelanguage{PHP}{
+  morekeywords={
+    __halt_compiler,abstract,alias,arguments,break,case,class,
+    clone,const,continue,declare,default,die,do,echo,else,elseif,
+    empty,endswitch,eval,exit,extends,final,finally,for,foreach,
+    function,global,goto,if,implements,include,include_once,
+    instanceof,insteadof,interface,is,isset,list,namespace,
+    print,private,protected,public,return,static,switch,throw,
+    trait,try,unset,use,var,while,yield
+  },
+  sensitive=true,
+  morecomment=[l]//,
+  morecomment=[s]/* */ ,
+  morestring=[b]",
+}
+
+% Javascript
+\lstdefinelanguage{JavaScript}{
+    morekeywords={abstract,arguments,await,boolean,break,byte,
+    case,catch,class,const,continue,debugger,default,delete,do,
+    double,else,enum,eval,export,extends,false,finally,for,function,
+    global,if,implements,import,in,instanceof,int,let,match,namespace,
+    NaN,private,protected,public,return,super,switch,throw,throws,true,
+    try,typeof,var,void,yield
+  },
+  sensitive=true,
+  morecomment=[l]//,
+  morecomment=[s]/* */ ,
+  morestring=[b]",
+}
